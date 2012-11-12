@@ -1,0 +1,24 @@
+<a href="<%= "#{I18n.t(:lang_path)}/index.html" %>"  id="logo"></a>
+  <nav role="navigation">
+    <ul class="group">
+
+      <li id="t-work">
+        <% magic_link_to "#{I18n.t(:lang_path)}/work.html" do %>
+        <%=  "<strong>#{I18n.t(:work)}<em>things we made</em></strong>" %>
+        <% end %>
+      </li>
+
+
+      <li id="t-blog">
+        <% magic_link_to "#{I18n.t(:lang_path)}/blog.html" do %>
+        <%=  "<strong>#{I18n.t(:blog)}<em>words we wrote</em></strong>" %>
+        <% end %>
+      </li>
+
+      <li id="t-about">
+        <% magic_link_to "#{I18n.t(:lang_path)}/about.html" do %>
+        <%=  "<strong>#{I18n.t(:about)}<em>info &amp; contact</em></strong>" %>
+        <% end %>
+      </li>
+</ul>
+  </nav>

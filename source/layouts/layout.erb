@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= data.page.title || current_resource.metadata[:title] || "The Middleman" %></title>
+    
+    <%= stylesheet_link_tag "normalize", "all" %>
+    <%= javascript_include_tag "jquery-1.8.0.min", "jquery-ui-1.8.23.custom.min","hammer","jquery.infinitedrag", "script" %>
+    
+  </head>
+  
+  <body class="<%= page_classes %>">
+    <%= yield %>
+  </body>
+</html>
