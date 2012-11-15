@@ -1,3 +1,8 @@
+require "rvm/capistrano"
+set :rvm_ruby_string, '1.9.3'
+set :rvm_type, :system
+require "bundler/capistrano"
+
 require "bundler/capistrano"
 default_run_options[:pty] = true  # Must be set for the password prompt
                                   # from git to work
@@ -9,6 +14,9 @@ set :user, "deploy"  # The server's user for deploys
 set :scm_passphrase, "sMDNtCJDCk5WOISg4C"  # The deploy user's password
 set :use_sudo, false
 set :folder, "brand"
+ssh_options[:forward_agent] = true
+set :branch, "master"
+set :deploy_via, :remote_cache
 
 set :deploy_to, "/home/deploy/#{folder}/"
 set :domain, "megapont.ru"
@@ -20,9 +28,6 @@ server "#{domain}", :app, :web, :db, :primary => true
 
 
 
-ssh_options[:forward_agent] = true
-set :branch, "master"
-set :deploy_via, :remote_cache
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 

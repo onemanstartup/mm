@@ -7,3 +7,4 @@ gem 'middlemanager', :path => "lib/middlemanager"
 gem 'therubyracer'
 gem 'libv8'
 gem 'capistrano'
+gem 'rvm-capistrano'
