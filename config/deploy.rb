@@ -37,3 +37,10 @@ set :deploy_via, :remote_cache
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
+#
+after "deploy:setup", "deploy:create_release_dir"
+namespace :deploy do
+  task :create_release_dir, :except => {:no_release => true} do
+    run "mkdir -p #{fetch :releases_path}"
+  end
+end
