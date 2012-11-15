@@ -24,28 +24,34 @@ $(document).ready(function() {
       //$element.html('<img src="/images/38.png"/>');
     //}
 	//});
+  
+  $(".wall").each(function(index) {
+  $(this).addClass('wall'+index);
 
   var height;
-  if ($("#wall").data("height") > $(window).outerHeight()) {
+  if ($(this).data("height") > $(window).outerHeight()) {
     heights = $(window).outerHeight() / 2;
-     $("#wall").parent().css("height", heights);
-     $("#wall").parent().parent().css("height", heights);
-     height = $("#wall").data("height");
+     $(this).parent().css("height", heights);
+     $(this).parent().parent().css("height", heights);
+     height = $(this).data("height");
   } else {
-    height = $("#wall").data("height");
+    height = $(this).data("height");
   }
 
-  var horizontal_seamless = jQuery.infinitedrag("#wall", 
-             {axis: $("#wall").data("axis")}, {
-		width: $("#wall").data("width"),
+  var horizontal_seamless = jQuery.infinitedrag(".wall"+index, 
+             {axis: $(this).data("axis")}, {
+		width: $(this).data("width"),
 		height: height,
 		start_col: 0,
 		start_row: 0,
-    range_row: [parseInt($("#wall").data("range-row").split(',')[0],10), parseInt($("#wall").data("range-row").split(',')[1], 10)],
-    range_col: [parseInt($("#wall").data("range-col").split(',')[0],10), parseInt($("#wall").data("range-col").split(',')[1], 10)],
+    range_row: [parseInt($(this).data("range-row").split(',')[0],10), parseInt($(this).data("range-row").split(',')[1], 10)],
+    range_col: [parseInt($(this).data("range-col").split(',')[0],10), parseInt($(this).data("range-col").split(',')[1], 10)],
     oncreate: function($element, col, row) {
-      $element.html('<img src="/images/works/'+$("#wall").data("image-name")+'"/>');
+      $element.html('<img src="/images/works/'+$('.wall'+index).data("image-name")+'"/>');
     }
 	});
+    
+
+});
 
 });

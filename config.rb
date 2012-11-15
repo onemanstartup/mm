@@ -22,9 +22,10 @@ end
 
 class Work
   
-  attr_accessor :title, :images
-  def initialize(title)
+  attr_accessor :title, :images, :ru_title
+  def initialize(title, ru_title="")
     self.title = title
+    self.ru_title = ru_title
     self.images = []
   end
   
@@ -76,10 +77,10 @@ ignore "ru/work_template.html"
 @works_array = []
 @works.each_with_index do |work, index|
   if work.category == "work"
-    w = Work.new(work.title)
+    w = Work.new(work.title, work.ru_title)
     if work.images
-      work.images.each do |image|
-        w.add_image(image["image_name"], {:axis=>image["axis"], :letter_box_type=>image["letter_box_type"], :bg => image["bg"]})
+      work.images.each do |h, image|
+          w.add_image(image["image_name"], {:axis=>image["axis"], :letter_box_type=>image["letter_box_type"], :bg => image["bg"]})
       end
     end
     @works_array << w
@@ -89,6 +90,10 @@ end
 @works_array.each_with_index do |work, index|
   page "/works/#{index}.html", :proxy => "/localizable/work_template.html", :ignore => true do
     @title = work.title
+    @images = work.images
+  end
+  page "ru/works/#{index}.html", :proxy => "/localizable/work_template.html", :ignore => true do
+    @title = work.ru_title
     @images = work.images
   end
 end

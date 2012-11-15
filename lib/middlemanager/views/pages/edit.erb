@@ -9,16 +9,37 @@
       <%= page.store_key %>
       
         <h3><span style="font-weight: normal">Editing</span> <%= page.name %></h3>
-    <label>Label name</label>
-        
-          <textarea class="xxlarge" style="margin: 0.5em 0;" rows="3" name="page[value]"><%= page.value %></textarea>
-    <label>Label name</label>
+                  <label>name(permalink)</label>
+                  <input class="span5" type="text" value="<%= page.name %>" name="page[name]">
+                  
+                  <label>title</label>
+                  <input class="span5" type="text" value="<%= page.title %>" name="page[title]">
+                  <label>ru_title</label>
+                  <input class="span5" type="text" value="<%= page.ru_title %>" name="page[ru_title]">
+                  <% if page.category == "work"%>
+                    <% page.images.each do |c| %>
+                        <% c.each_with_index do |image, index| %>
 
-          <textarea class="xxlarge" style="margin: 0.5em 0;" rows="3" name="page[title]"><%= page.title %></textarea>
+                      <fieldset>
+                        <legend> <%= image["image_name"]  %> </legend>
+                  <label>bg</label>
+                  <input class="span5" type="text" value="<%= image["bg"] %>" name="page[images][<%= index %>][bg]">
+                  <label>image_name</label>
+                  <input class="span5" type="text" value="<%= image["image_name"]  %>" name="page[images][<%= index %>][image_name]">
+                  <label>axis</label>
+                  <input class="span5" type="text" value="<%= image["axis"]  %>" name="page[images][<%= index %>][axis]">
+                  <label>letter_box_type</label>
+                  <input class="span5" type="text" value="<%= image["letter_box_type"]  %>" name="page[images][<%= index %>][letter_box_type]">
+                  </fieldset>
+                  <% end %>
+<% end %>
+
+          <% end %>
         
           <span class="help-block">
             Content will be entered for <b><%= page.category %></b> on <code><%= page.category %></code> <b>(<%= page.title %>)</b>
           </span>
+
     <% end %>
     
     <div class="actions">

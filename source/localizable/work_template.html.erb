@@ -7,17 +7,18 @@
   <div id="content">
     <div class="post">
       <h2><%= @title %></h2>
-      <div style="height:<%= @images[0][:height] %>px">
-        <div class="letterbox <%= @images[0][:letter_box_type] %>" style="height:<%= @images[0][:height] %>px; background-color:#<%= @images[0][:bg] %> ">
-          <div id="wall" data-width="<%= @images[0][:width] %>" data-height="<%= @images[0][:height] %>" 
-            data-image-name="<%= @images[0][:image_name] %>" 
-            data-axis="<%= @images[0][:axis] %>"
-            data-range-row="<%= @images[0][:range_row]%>"
-            data-range-col="<%= @images[0][:range_col]%>"
-
+      <% @images.each_with_index do |image| %>
+      <div style="height:<%= image[:height] %>px">
+        <div class="letterbox <%= image[:letter_box_type] %>" style="height:<%= image[:height] %>px; background-color:#<%= image[:bg] %> ">
+          <div class="wall" data-width="<%= image[:width] %>" data-height="<%= image[:height] %>" 
+            data-image-name="<%= image[:image_name] %>" 
+            data-axis="<%= image[:axis] %>"
+            data-range-row="<%= image[:range_row]%>"
+            data-range-col="<%= image[:range_col]%>"
             ></div>
       </div>
     </div>
+  <% end %>
       <p>
         I’m Jonathan Ogden (also known as Oggy). A Web Designer at The Message and a lover of all things creative. In my spare time I make videos, design things, write music, drink tea (pictured) and some other stuff.
       </p>
