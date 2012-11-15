@@ -1,3 +1,4 @@
+require 'middleman-middlemanager'
 require 'fastimage'
 #require "source/lib/custom_helpers"
 #helpers CustomHelpers
@@ -121,6 +122,7 @@ set :js_dir, 'js'
 
 set :images_dir, 'images'
 activate :livereload
+activate :middle_manager
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
