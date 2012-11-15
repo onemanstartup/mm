@@ -3,15 +3,15 @@ default_run_options[:pty] = true  # Must be set for the password prompt
                                   # from git to work
 
 set :application, "megapont"
-set :repository, "git@github.com:user/repo.git"  # Your clone URL
+set :repository, "git@github.com:onemanstartup/mm.git"  # Your clone URL
 set :scm, "git"
 set :user, "deploy"  # The server's user for deploys
 set :scm_passphrase, "sMDNtCJDCk5WOISg4C"  # The deploy user's password
 set :use_sudo, false
-set :folder, "testdeploy"
+set :folder, "brand"
 
-set :deploy_to, "/home/deploy/new/#{folder}/"
-set :domain, "taxcon.ru"
+set :deploy_to, "/home/deploy/#{folder}/"
+set :domain, "megapont.ru"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
