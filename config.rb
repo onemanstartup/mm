@@ -1,5 +1,13 @@
 require 'middle_admin'
 require 'fastimage'
+
+activate :blog do |blog|
+  blog.paginate = true
+  blog.page_link = "p:num"
+  blog.per_page = 20
+  blog.sources = "blog/:year-:month-:day-:title"
+end
+
 #require "source/lib/custom_helpers"
 #helpers CustomHelpers
 helpers do
@@ -37,16 +45,16 @@ class Work
   
 
 end
-works = []
-w1 = Work.new("Work #1")
-w1.add_image("31_pixel_art.png", {:axis=>"x", :bg => "fff6eb", :letter_box_type=>"full"})
-works << w1
-w2 = Work.new("Work #2")
-w2.add_image("39_pixel_art.png")
-works << w2
-w3 = Work.new("Work #3")
-w3.add_image("29_pixel_art.png", {:axis=>"x", :letter_box_type=>"full"})
-works << w3
+#works = []
+#w1 = Work.new("Work #1")
+#w1.add_image("31_pixel_art.png", {:axis=>"x", :bg => "fff6eb", :letter_box_type=>"full"})
+#works << w1
+#w2 = Work.new("Work #2")
+#w2.add_image("39_pixel_art.png")
+#works << w2
+#w3 = Work.new("Work #3")
+#w3.add_image("29_pixel_art.png", {:axis=>"x", :letter_box_type=>"full"})
+#works << w3
 
     # if viewport.width > image.width
     #   center & vertical & bg
@@ -58,13 +66,36 @@ works << w3
     
 
 
-works.each_with_index do |work, index|
+# Works
+#
+ignore "work_template.html"
+ignore "ru/work_template.html"
+
+@manager_pages_works ||= MiddleManager::Manager.new(store_dir:'data/', filename:'middle_manager_pages.yml')
+@works = @manager_pages_works.pages.all
+@works_array = []
+@works.each_with_index do |work, index|
+  if work.category == "work"
+    w = Work.new(work.title)
+    if work.images
+      work.images.each do |image|
+        w.add_image(image["image_name"], {:axis=>image["axis"], :letter_box_type=>image["letter_box_type"], :bg => image["bg"]})
+      end
+    end
+    @works_array << w
+  end
+end
+
+@works_array.each_with_index do |work, index|
   page "/works/#{index}.html", :proxy => "/localizable/work_template.html", :ignore => true do
     @title = work.title
     @images = work.images
   end
 end
 
+
+# Pages
+#
 @manager_pages ||= MiddleManager::Manager.new(store_dir:'data/', filename:'middle_manager_pages.yml')
 @pages = @manager_pages.pages.all
 @pages.each_with_index do |work, index|
@@ -73,6 +104,8 @@ end
   end
 end
 
+page_articles = @pages
+articles = @pages
 
 ### 
 # Compass

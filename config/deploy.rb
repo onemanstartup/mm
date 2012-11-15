@@ -2,8 +2,6 @@ require "rvm/capistrano"
 set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :system
 require "bundler/capistrano"
-
-require "bundler/capistrano"
 default_run_options[:pty] = true  # Must be set for the password prompt
                                   # from git to work
 
@@ -11,12 +9,14 @@ set :application, "megapont"
 set :repository, "git@github.com:onemanstartup/mm.git"  # Your clone URL
 set :scm, "git"
 set :user, "deploy"  # The server's user for deploys
-set :scm_passphrase, "sMDNtCJDCk5WOISg4C"  # The deploy user's password
 set :use_sudo, false
 set :folder, "brand"
 ssh_options[:forward_agent] = true
+# ssh-add ~/.ssh/id-rsa
 set :branch, "master"
 set :deploy_via, :remote_cache
+set :shared_children, shared_children + %w{data}
+set :copy_exclude, [".git", ".DS_Store", ".gitignore", ".gitmodules"]
 
 set :deploy_to, "/home/deploy/#{folder}/"
 set :domain, "megapont.ru"

@@ -11,3 +11,15 @@ about.html@cc: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   value: asd
   title: Welcome to Megapont
   options: {}
+ru/about.html@Headline:
+  :path: ru/about.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+ru/about.html@cc:
+  :path: ru/about.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}

@@ -88,5 +88,10 @@ module MiddleManager
       manager_pages.pages.delete_key("#{splat}")
       redirect to('/'), 303
     end
+
+    get '/build' do
+      Middleman::Cli::Build.new.build
+      redirect to('/'), 303
+    end
   end
 end

@@ -8,3 +8,5 @@ gem 'therubyracer'
 gem 'libv8'
 gem 'capistrano'
 gem 'rvm-capistrano'
+gem "middleman-blog"
+gem 'builder'

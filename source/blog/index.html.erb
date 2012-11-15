@@ -15,7 +15,6 @@ title: Welcomes to Megapont
     <p><%= link_to 'Previous page', prev_page %></p>
   <% end %>
 <% end %>
-
 <% page_articles.each_with_index do |article, i| %>
   <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
   <p><%= article.summary %></p>
@@ -66,5 +65,6 @@ title: Welcomes to Megapont
 </div>
 
 <%= partial "/partials/footer" %>
+
 
 

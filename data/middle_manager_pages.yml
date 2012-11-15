@@ -1,10 +1,4 @@
 ---
-works@first_work: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
-  category: works
-  name: first_work
-  body: ssssdsdsd
-  title: asdasdWelcome to Megaponts
-  options: {}
 posts@first: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   category: posts
   name: first_work
@@ -16,3 +10,12 @@ post@asd:
   title: New Post
   body: some text
   name: asd
+works@work1:
+  category: work
+  name: work1
+  title: work 1
+  images:
+  - bg: fff6eb
+    image_name: 31_pixel_art.png
+    axis: x
+    letter_box_type: full
