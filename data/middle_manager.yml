@@ -1,0 +1,13 @@
+---
+about.html@Headline: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  path: about.html
+  name: Headline
+  value: s
+  title: Welcome to Megapont
+  options: {}
+about.html@cc: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  path: about.html
+  name: cc
+  value: asd
+  title: Welcome to Megapont
+  options: {}

@@ -1,0 +1,20 @@
+<% current_resource.add_metadata({:title=>@title})%>
+<div id="container">
+  <%= partial "/partials/lang_switch" %>
+  <%= partial "/partials/navigation" %>
+
+
+  <div id="content">
+    <div class="post">
+      <h2><%= @title %></h2>
+          <%= @text %>
+    </div>
+  </div>
+</div>
+
+<%= partial "/partials/footer" %>
+
+
+
+
+

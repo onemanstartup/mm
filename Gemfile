@@ -5,4 +5,5 @@ gem "middleman-livereload", :github => "middleman/middleman-livereload"
 gem "fastimage"
 gem 'middlemanager', :path => "lib/middlemanager"
 gem 'therubyracer'
-gem 'libv8' 
+gem 'libv8'
+gem 'capistrano'

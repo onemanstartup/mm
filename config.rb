@@ -1,4 +1,4 @@
-require 'middleman-middlemanager'
+require 'middle_admin'
 require 'fastimage'
 #require "source/lib/custom_helpers"
 #helpers CustomHelpers
@@ -65,6 +65,14 @@ works.each_with_index do |work, index|
   end
 end
 
+@manager_pages ||= MiddleManager::Manager.new(store_dir:'data/', filename:'middle_manager_pages.yml')
+@pages = @manager_pages.pages.all
+@pages.each_with_index do |work, index|
+  page "/post/#{index}.html", :proxy => "/localizable/post_template.html", :ignore => true do
+    @title = work.title
+  end
+end
+
 
 ### 
 # Compass
@@ -122,7 +130,7 @@ set :js_dir, 'js'
 
 set :images_dir, 'images'
 activate :livereload
-activate :middle_manager
+activate :admin
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
