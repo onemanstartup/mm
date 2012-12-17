@@ -163,7 +163,7 @@ articles = @pages
 activate :i18n, :langs => [:en, :ru]
 
 set :css_dir, 'stylesheets'
-
+set :logging, true
 set :js_dir, 'js'
 
 set :images_dir, 'images'
