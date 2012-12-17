@@ -9,3 +9,4 @@ gem 'rvm-capistrano'
 gem "middleman-blog"
 gem 'builder'
 gem "therubyracer"
+gem "passenger"
