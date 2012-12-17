@@ -14,5 +14,4 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency('sinatra')
   s.add_runtime_dependency('thor')
-  s.add_runtime_dependency('psych', ["~> 1.2.2"])
 end

@@ -4,9 +4,8 @@ gem "middleman", "~>3.0.0"
 gem "middleman-livereload", :github => "middleman/middleman-livereload"
 gem "fastimage"
 gem 'middlemanager', :path => "lib/middlemanager"
-gem 'therubyracer'
-gem 'libv8'
 gem 'capistrano'
 gem 'rvm-capistrano'
 gem "middleman-blog"
 gem 'builder'
+gem "therubyracer", :require => 'v8'
