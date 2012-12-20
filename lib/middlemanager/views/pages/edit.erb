@@ -17,6 +17,7 @@
                   <label>ru_title</label>
                   <input class="span5" type="text" value="<%= page.ru_title %>" name="page[ru_title]">
                   <% if page.category == "work"%>
+                    <% if page.images %>
                     <% page.images.each do |c| %>
                         <% c.each_with_index do |image, index| %>
 
@@ -33,7 +34,20 @@
                   </fieldset>
                   <% end %>
 <% end %>
+<%else%>
 
+  <p>Add new image</p>
+                      <fieldset>
+                  <label>bg</label>
+                  <input class="span5" type="text" value="" name="page[images][0][bg]">
+                  <label>image_name</label>
+                  <input class="span5" type="text" value="" name="page[images][0][image_name]">
+                  <label>axis</label>
+                  <input class="span5" type="text" value="" name="page[images][0][axis]">
+                  <label>letter_box_type</label>
+                  <input class="span5" type="text" value="" name="page[images][0][letter_box_type]">
+                  </fieldset>
+          <% end %>
           <% end %>
         
           <span class="help-block">

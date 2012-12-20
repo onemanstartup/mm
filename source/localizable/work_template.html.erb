@@ -7,18 +7,20 @@
   <div id="content">
     <div class="post">
       <h2><%= @title %></h2>
+    </div>
       <% @images.each_with_index do |image| %>
-      <div style="height:<%= image[:height] %>px">
+        <div style="height:<%= image[:height] %>px">
         <div class="letterbox <%= image[:letter_box_type] %>" style="height:<%= image[:height] %>px; background-color:#<%= image[:bg] %> ">
-          <div class="wall" data-width="<%= image[:width] %>" data-height="<%= image[:height] %>" 
-            data-image-name="<%= image[:image_name] %>" 
-            data-axis="<%= image[:axis] %>"
-            data-range-row="<%= image[:range_row]%>"
-            data-range-col="<%= image[:range_col]%>"
-            ></div>
+             <div class="wall" data-width="<%= image[:width] %>" data-height="<%= image[:height] %>" 
+                data-image-name="<%= image[:image_name] %>" 
+                data-axis="<%= image[:axis] %>"
+                data-letter-box-type="<%= image[:letter_box_type]%>"
+                 data-range-row="<%= image[:range_row]%>"
+                data-range-col="<%= image[:range_col]%>"></div>
       </div>
     </div>
   <% end %>
+    <div class="post">
       <p>
         I’m Jonathan Ogden (also known as Oggy). A Web Designer at The Message and a lover of all things creative. In my spare time I make videos, design things, write music, drink tea (pictured) and some other stuff.
       </p>
@@ -31,14 +33,14 @@
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'megapont'; // required: replace example with your forum shortname
+            <%#var disqus_shortname = 'megapont'; // required: replace example with your forum shortname%>
 
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
+            <%#/* * * DON'T EDIT BELOW THIS LINE * * */%>
+            <%#(function() {%>
+                <%#var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;%>
+                <%#dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';%>
+                <%#(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);%>
+            <%#})();%>
         </script>
         <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
