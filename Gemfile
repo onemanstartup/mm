@@ -8,5 +8,7 @@ gem 'capistrano'
 gem 'rvm-capistrano'
 gem "middleman-blog"
 gem 'builder'
+gem 'libv8', '~> 3.11.8'
 gem "therubyracer"
+
 gem "passenger"

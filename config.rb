@@ -78,7 +78,7 @@ ignore "ru/work_template.html"
 @works.each_with_index do |work, index|
   if work.category == "work"
     w = Work.new(work.title, work.ru_title)
-    if work.images
+    if work.images != nil
       work.images.each do |h, image|
           w.add_image(image["image_name"], {:axis=>image["axis"], :letter_box_type=>image["letter_box_type"], :bg => image["bg"]})
       end

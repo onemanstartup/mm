@@ -9,8 +9,8 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= data.page.title || current_resource.metadata[:title] || "The Middleman" %></title>
     
-    <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag "jquery-1.8.0.min", "jquery-ui-1.8.23.custom.min","hammer","jquery.infinitedrag", "script" %>
+    <%= stylesheet_link_tag "normalize", "all", "elastislide" %>
+    <%= javascript_include_tag "jquery-1.8.0.min", "#jquery-ui-1.8.23.custom.min","hammer","jquery.infinitedrag", "jquery.carouFredSel-6.1.0-packed", "jquery.tinycarousel.min", "jquery.jcarousel.min", "script" %>
     
   </head>
   

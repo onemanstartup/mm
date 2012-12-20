@@ -27,3 +27,27 @@ work@work1: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
       image_name: 31_pixel_art.png
       axis: x
       letter_box_type: full
+work@work2: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  category: work
+  title: work2
+  body: work
+  name: work2
+  ru_title: ''
+  images:
+    '0':
+      bg: '000000'
+      image_name: 45_pixel_art.png
+      axis: xy
+      letter_box_type: single
+work@work3: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  category: work
+  title: work3
+  body: work
+  name: work3
+  ru_title: ''
+  images:
+    '0':
+      bg: '000000'
+      image_name: 45_pixel_art.png
+      axis: xy
+      letter_box_type: single
