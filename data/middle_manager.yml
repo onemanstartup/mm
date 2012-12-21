@@ -2,7 +2,7 @@
 about.html@Headline: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   path: about.html
   name: Headline
-  value: s
+  value: About
   title: Welcome to Megapont
   options: {}
 about.html@cc: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
