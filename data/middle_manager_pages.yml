@@ -19,14 +19,9 @@ work@work1: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   images:
     '0':
       bg: f3f6eb
-      image_name: 31_pixel_art.png
+      image_name: 1_pixel_art.png
       axis: x
-      letter_box_type: full
-    '1':
-      bg: f3f6eb
-      image_name: 31_pixel_art.png
-      axis: x
-      letter_box_type: full
+      letter_box_type: single
 work@work2: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   category: work
   title: work2
@@ -36,8 +31,8 @@ work@work2: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   images:
     '0':
       bg: '000000'
-      image_name: 45_pixel_art.png
-      axis: xy
+      image_name: 39_pixel_art.png
+      axis: y
       letter_box_type: single
 work@work3: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   category: work
@@ -48,6 +43,66 @@ work@work3: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   images:
     '0':
       bg: '000000'
+      image_name: 41_pixel_art.png
+      axis: xy
+      letter_box_type: single
+work@work4: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  category: work
+  title: work3
+  body: work
+  name: work3
+  ru_title: ''
+  images:
+    '0':
+      bg: '000000'
+      image_name: 43_pixel_art.png
+      axis: xy
+      letter_box_type: single
+work@work5: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  category: work
+  title: work3
+  body: work
+  name: work3
+  ru_title: ''
+  images:
+    '0':
+      bg: '000000'
+      image_name: 44_pixel_art.png
+      axis: xy
+      letter_box_type: single
+work@work6: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  category: work
+  title: work3
+  body: work
+  name: work3
+  ru_title: ''
+  images:
+    '0':
+      bg: '000000'
       image_name: 45_pixel_art.png
+      axis: xy
+      letter_box_type: single
+work@work7: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  category: work
+  title: work3
+  body: work
+  name: work3
+  ru_title: ''
+  images:
+    '0':
+      bg: '000000'
+      image_name: 49_pixel_art.png
+      axis: xy
+      letter_box_type: single
+work@work8: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  category: work
+  title: work3
+  body: work
+  name: work3
+  ru_title: ''
+  images:
+    '0':
+      bg: '000000'
+      image_name: 50_pixel_art.png
       axis: xy
       letter_box_type: single

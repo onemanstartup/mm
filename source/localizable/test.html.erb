@@ -1,0 +1,87 @@
+<style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            background: black;
+        }
+    </style>
+<div id="map"></div>
+
+<script>
+        L.CRS.Simple = L.Util.extend({}, L.CRS, {
+            projection: L.Projection.LonLat,
+            transformation: new L.Transformation(1, 0, -0.25, 0.25)
+        });
+
+        L.CustomTileLayer = L.TileLayer.extend({
+            tileCoords: {
+                5: [118, 39],
+                4: [59, 20],
+                3: [10, 10]
+            },
+            isValidTile: function(x, y, z) {
+                var tileXCount = this.tileCoords[z][0];
+                var tileYCount = this.tileCoords[z][1];
+                console.log(tileYCount  )
+                return (x >= tileXCount || x < 0 || y >= tileYCount || y < 0);
+            },
+            getTileUrl: function(tilePoint, zoom) {
+              console.log(tilePoint.x)
+              console.log(tilePoint.y)
+              console.log(this._getZoomForUrl())
+                if (this.isValidTile(tilePoint.x, tilePoint.y, this._getZoomForUrl())) {
+                    return this.options.emptyTileUrl;
+                }
+
+                this._adjustTilePoint(tilePoint);
+
+                return L.Util.template(this._url, L.Util.extend({
+                    s: this._getSubdomain(tilePoint),
+                    z: this._getZoomForUrl(),
+                    x: tilePoint.x,
+                    y: tilePoint.y
+                }, this.options));
+            }
+        });
+
+        L.customTileLayer = function(url, options) {
+           return new L.CustomTileLayer(url, options);
+        };
+
+        var startPos = [0, 0];
+        var allowedBounds = [
+            [-3.84336, 0.007], // SW
+            [0.94922, 3.68351] // NE
+        ];
+
+        var baseUrl = 'http://0.0.0.0:4567/images/works/43';
+
+        var map = L.map('map', {
+            crs: L.CRS.Simple,
+            zoom: 3,
+            worldCopyJump: false,
+            center: startPos,
+       //     maxBounds: allowedBounds,
+            keyboard: false
+        });
+
+        map.on('zoomend', function(e) {
+            map.panInsideBounds(allowedBounds);
+        });
+
+        // For IE
+        map.on('moveend', function(e) {
+            map.panInsideBounds(allowedBounds);
+        });
+
+        var layer = L.customTileLayer(baseUrl + '/{z}/43_pixel_art_00_{y}_{x}.png', {
+          emptyTileUrl: baseUrl + '/empty.png',
+          tileSize:[165,111],
+            maxZoom: 5,
+            minZoom: 3,
+            continuousWorld: true
+        }).addTo(map);
+    </script>

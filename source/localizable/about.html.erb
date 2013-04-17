@@ -1,10 +1,16 @@
 ---
 title: Welcome to Megapont
 ---
+<div id="top_nav">
+  <div class="bar">
+    <a href="/work.html">Back to works</a>
+    <%= partial "/partials/lang_switch" %>
+  </div>
+  <div id="header">
+    <%= partial "/partials/navigation" %>
+  </div>
+</div>
 <div id="container">
-  <%= partial "/partials/lang_switch" %>
-  <%= partial "/partials/navigation" %>
-
   <div id="content">
     <div class="post">
       <h2><%= mgmt "Headline" %></h2>

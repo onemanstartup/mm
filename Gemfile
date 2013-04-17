@@ -10,5 +10,5 @@ gem "middleman-blog"
 gem 'builder'
 gem 'libv8', '~> 3.11.8'
 gem "therubyracer"
-
+gem 'json'
 gem "passenger"

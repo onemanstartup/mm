@@ -23,3 +23,39 @@ ru/about.html@cc:
   :value: ! '{{ mgmt cc }}'
   :title: Welcome to Megapont
   :options: {}
+work.html@Headline:
+  :path: work.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+work.html@cc:
+  :path: work.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}
+index.html@Headline:
+  :path: index.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+index.html@cc:
+  :path: index.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}
+ru/index.html@Headline:
+  :path: ru/index.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+ru/index.html@cc:
+  :path: ru/index.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}
