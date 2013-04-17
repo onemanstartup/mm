@@ -800,3 +800,10 @@ you can use the generic selector below, but it's slower:
   display:none;
   opacity:0;
 }
+
+body.ru .eng{
+  display:none;
+}
+body.eng .ru{
+  display:none;
+}

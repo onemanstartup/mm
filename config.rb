@@ -117,11 +117,11 @@ ignore "ru/work_template.html"
 end
 
 @works_array.each_with_index do |work, index|
-  page "/works/#{index+1}.html", :proxy => "/localizable/work_template.html", :ignore => true do
+  page "/gallery/pixelart_#{index+1}.html", :proxy => "/localizable/index.html", :ignore => true do
     @title = work.title
     @images = work.images
   end
-  page "ru/works/#{index}.html", :proxy => "/localizable/work_template.html", :ignore => true do
+  page "ru/gallery/pixelart_#{index}.html", :proxy => "/localizable/index.html", :ignore => true do
     @title = work.ru_title
     @images = work.images
   end
@@ -140,6 +140,10 @@ end
 
 page_articles = @pages
 articles = @pages
+page "/about.html", :proxy => "/localizable/index.html"
+page "ru/about.html", :proxy => "/localizable/index.html"
+page "/ru/", :proxy => "/localizable/index.html"
+
 
 ### 
 # Compass

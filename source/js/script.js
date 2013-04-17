@@ -14,20 +14,40 @@ String.prototype.format = function() {
     ;
   });
 };
+var router, lang;
+lang = "/";
 $(document).ready(function() {
 
-  var router = new Router();
-  router.route('/about.html', function(path){
+   router = new Router();
+  router.route('*lang/about.html', function(lang){
+    console.log("loading about.html" + " " + lang);
     $("body").addClass("about");
     $("#works").hide();
     $("#about_us").css("display","block");
     $("#about_us").animate({opacity:1},800);
-    $("#page_switch").text("back to works").attr("href", "/");
+    if (lang === "/ru"){
+      $("#page_switch").text("назад к галлерее работ").attr("href", "/ru/");
+    } else {
+      $("#page_switch").text("back to works").attr("href", "/");
+    }
+    
   });
-  router.route('/gallery/pixelart_:id.html', function(id){
+  router.route('*lang/gallery/pixelart_:id.html', function(lang, id){
+    console.log('galllery');
+    reset();
+    load_main();
+    
     gal(parseInt(id,10));
   });
   router.route('', function(){
+    $('body').addClass('eng');
+    reset();
+    load_main();
+  });
+
+  router.route('/ru/', function(){
+    lang = "/ru";
+    $('body').addClass('ru');
     reset();
     load_main();
   });
@@ -38,12 +58,20 @@ $(document).ready(function() {
 
   function reset(){
     $("body").removeClass("about");
+    $("body").removeClass("ru_about");
+    
     $("#works").hide();
     $("#about_us").hide();
   }
 
   function load_main(){
-    $("#page_switch").text("about us").attr("href", "about.html");
+    if (lang === "/ru"){
+      $("#page_switch").text("о нас").attr("href", "/ru/about.html");
+    } else {
+      $("#page_switch").text("about us").attr("href", "about.html");
+    }
+
+
     if ($("#works").html().trim() === "") {
     var cardTemplate = $("#cardTemplate").html();
     $(works).each(function(index){
@@ -55,23 +83,30 @@ $(document).ready(function() {
 
     $("#works").show();
   }
+  // loading page first route
+  router.checkRoutes(History.getState());
 
-  window.onpopstate = function(event) {
-    console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-    if(mobile()){
-      router.navigate("/about.html");
-    } else {
-      if (window.location.pathname === "/about.html"){
+
+  function enableonpopstate(){
+    window.onpopstate = function(event) {
+      console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
+      if(mobile()){
         router.navigate("/about.html");
-      }else if(window.location.pathname === "/"){
-        reset();
-        load_main();
       } else {
-
+        if (window.location.pathname === "/about.html"){
+          router.navigate("/about.html");
+        }else if(window.location.pathname === "/"){
+          reset();
+          load_main();
+        } else {
+          console.log(window.location.pathname);
+          router.navigate(window.location.pathname);
+        }
       }
-    }
-  };
-
+    };
+    
+  }
+  enableonpopstate();
 
   $("body").delegate("#page_switch", "click", function(e){
     e.preventDefault();
@@ -82,25 +117,25 @@ $(document).ready(function() {
     $("#overlay").hide();
     $("#love").empty();
     $("html").css("overflow-y","scroll");
-    router.navigate('/');
+    router.navigate(lang);
   });
 
   $("body").delegate(".cari a", "click", function(e){
     e.preventDefault();
-    History.pushState(null, null, "/gallery/pixelart_"+(parseInt($(this).data("index"),10))+".html");
+    History.pushState(null, null, lang + "/gallery/pixelart_"+(parseInt($(this).data("index"),10))+".html");
   });
   $("body").delegate("#next-image", "click", function(e){
     e.preventDefault();
      var a = /gallery\/pixelart_(\d+)\.html/.exec(window.location.pathname);
      $("#overlay a.close").trigger("click");
-     History.pushState(null, null, "/gallery/pixelart_"+(parseInt(a[1], 10)+1)+".html");
+     History.pushState(null, null, lang + "/gallery/pixelart_"+(parseInt(a[1], 10)+1)+".html");
    });
 
   $("body").delegate("#prev-image", "click", function(e){
     e.preventDefault();
      var a = /gallery\/pixelart_(\d+)\.html/.exec(window.location.pathname);
      $("#overlay a.close").trigger("click");
-     History.pushState(null, null, "/gallery/pixelart_"+(parseInt(a[1], 10)-1)+".html");
+     History.pushState(null, null, lang + "/gallery/pixelart_"+(parseInt(a[1], 10)-1)+".html");
    });
 
 

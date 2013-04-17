@@ -59,3 +59,27 @@ ru/index.html@cc:
   :value: ! '{{ mgmt cc }}'
   :title: Welcome to Megapont
   :options: {}
+gallery/pixelart_1.html@Headline:
+  :path: gallery/pixelart_1.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_1.html@cc:
+  :path: gallery/pixelart_1.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_8.html@Headline:
+  :path: gallery/pixelart_8.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_8.html@cc:
+  :path: gallery/pixelart_8.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}
