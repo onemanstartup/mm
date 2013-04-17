@@ -207,6 +207,7 @@ set :js_dir, 'js'
 set :images_dir, 'images'
 activate :livereload
 
+#activate :livereload
 activate :admin
 # Build-specific configuration
 configure :build do
