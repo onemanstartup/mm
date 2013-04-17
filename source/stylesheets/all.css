@@ -70,7 +70,7 @@ z-index: 2;
   width:100%;
   margin:0px auto;
   overflow:hidden;
-  padding-top: 300px;
+  padding-top: 230px;
 }
 #logo{
   display:block;
@@ -693,16 +693,22 @@ line-height:50px;
 #overlay #bottomsection{
   height:50px;
 }
+.post{
+  font-size:16px;
+}
 }
 
 @media only screen 
-and (max-width : 600px){
+and (max-width : 720px){
   nav {
     width: 100%;
   }
-  .jcarousel li {
-    margin:0px 20px;
+.post{
+  padding:20px 10px;
+  width:100%;
 }
+
+
 
 }
 
@@ -806,4 +812,7 @@ body.ru .eng{
 }
 body.eng .ru{
   display:none;
+}
+body .ru{
+display:none;
 }

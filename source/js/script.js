@@ -83,16 +83,19 @@ $(document).ready(function() {
 
     $("#works").show();
   }
-  // loading page first route
-  router.checkRoutes(History.getState());
-
+  if(mobile()){
+    if (window.location.pathname === "/"){
+          router.navigate("/about.html");
+    }
+    router.checkRoutes(History.getState());
+  } else {
+    // loading page first route
+    router.checkRoutes(History.getState());
+  }
 
   function enableonpopstate(){
     window.onpopstate = function(event) {
       console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-      if(mobile()){
-        router.navigate("/about.html");
-      } else {
         if (window.location.pathname === "/about.html"){
           router.navigate("/about.html");
         }else if(window.location.pathname === "/"){
@@ -102,7 +105,6 @@ $(document).ready(function() {
           console.log(window.location.pathname);
           router.navigate(window.location.pathname);
         }
-      }
     };
     
   }
