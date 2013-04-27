@@ -83,3 +83,51 @@ gallery/pixelart_8.html@cc:
   :value: ! '{{ mgmt cc }}'
   :title: Welcome to Megapont
   :options: {}
+gallery/pixelart_2.html@Headline:
+  :path: gallery/pixelart_2.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_2.html@cc:
+  :path: gallery/pixelart_2.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_4.html@Headline:
+  :path: gallery/pixelart_4.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_4.html@cc:
+  :path: gallery/pixelart_4.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_3.html@Headline:
+  :path: gallery/pixelart_3.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_3.html@cc:
+  :path: gallery/pixelart_3.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_5.html@Headline:
+  :path: gallery/pixelart_5.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+gallery/pixelart_5.html@cc:
+  :path: gallery/pixelart_5.html
+  :name: cc
+  :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}

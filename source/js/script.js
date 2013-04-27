@@ -9,8 +9,8 @@ String.prototype.format = function() {
   var args = arguments;
   return this.replace(/{(\d+)}/g, function(match, number) { 
     return typeof args[number] != 'undefined'
-      ? args[number]
-      : match
+    ? args[number]
+    : match
     ;
   });
 };
@@ -18,25 +18,25 @@ var router, lang;
 lang = "/";
 $(document).ready(function() {
 
-   router = new Router();
+  router = new Router();
   router.route('*lang/about.html', function(lang){
     console.log("loading about.html" + " " + lang);
     $("body").addClass("about");
     $("#works").hide();
-    $("#about_us").css("display","block");
-    $("#about_us").animate({opacity:1},800);
+    $("#about_us").css({"display":"block"});
+    $("#about_us").animate({opacity:1},800,'easeInQuart');
     if (lang === "/ru"){
       $("#page_switch").text("назад к галлерее работ").attr("href", "/ru/");
     } else {
       $("#page_switch").text("back to works").attr("href", "/");
     }
-    
+
   });
   router.route('*lang/gallery/pixelart_:id.html', function(lang, id){
     console.log('galllery');
     reset();
     load_main();
-    
+    loading(parseInt(id,10));
     gal(parseInt(id,10));
   });
   router.route('', function(){
@@ -59,9 +59,11 @@ $(document).ready(function() {
   function reset(){
     $("body").removeClass("about");
     $("body").removeClass("ru_about");
-    
+
     $("#works").hide();
     $("#about_us").hide();
+    $("#about_us").css({"opacity":0});
+
   }
 
   function load_main(){
@@ -72,20 +74,20 @@ $(document).ready(function() {
     }
 
 
-    if ($("#works").html().trim() === "") {
-    var cardTemplate = $("#cardTemplate").html();
-    $(works).each(function(index){
-      w = this.data;
-      var template = cardTemplate.format(works.length - index, w.title, w.preview.image_name, w.preview.width);
-      $("#works").append(template);
-    });
+    if ($("#works .inner_content").html().trim() === "") {
+      var cardTemplate = $("#cardTemplate").html();
+      $(works).each(function(index){
+        w = this.data;
+        var template = cardTemplate.format(works.length - index, w.title, w.preview.image_name, w.preview.width);
+        $("#works .inner_content").append(template);
+      });
     } 
 
     $("#works").show();
   }
   if(mobile()){
     if (window.location.pathname === "/"){
-          router.navigate("/about.html");
+      router.navigate("/about.html");
     }
     router.checkRoutes(History.getState());
   } else {
@@ -96,17 +98,17 @@ $(document).ready(function() {
   function enableonpopstate(){
     window.onpopstate = function(event) {
       console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
-        if (window.location.pathname === "/about.html"){
-          router.navigate("/about.html");
-        }else if(window.location.pathname === "/"){
-          reset();
-          load_main();
-        } else {
-          console.log(window.location.pathname);
-          router.navigate(window.location.pathname);
-        }
+      if (window.location.pathname === "/about.html"){
+        router.navigate("/about.html");
+      }else if(window.location.pathname === "/"){
+        reset();
+        load_main();
+      } else {
+        console.log(window.location.pathname);
+        router.navigate(window.location.pathname);
+      }
     };
-    
+
   }
   enableonpopstate();
 
@@ -116,72 +118,121 @@ $(document).ready(function() {
   });
 
   $("body").delegate("#overlay a.close", "click", function(){
-    $("#overlay").hide();
+    closeOverlay();
     $("#love").empty();
     $("html").css("overflow-y","scroll");
     router.navigate(lang);
   });
 
+  $("#overlay a.close").mouseover(function() {
+    $(this).animate({"opacity":"1"},100, "easeInQuad"); 
+  }).mouseout(function(){
+    $(this).animate({"opacity":"0.6"},100, "easeInQuad"); 
+  });
   $("body").delegate(".cari a", "click", function(e){
     e.preventDefault();
     History.pushState(null, null, lang + "/gallery/pixelart_"+(parseInt($(this).data("index"),10))+".html");
   });
   $("body").delegate("#next-image", "click", function(e){
     e.preventDefault();
-     var a = /gallery\/pixelart_(\d+)\.html/.exec(window.location.pathname);
-     $("#overlay a.close").trigger("click");
-     History.pushState(null, null, lang + "/gallery/pixelart_"+(parseInt(a[1], 10)+1)+".html");
-   });
+    var a = /gallery\/pixelart_(\d+)\.html/.exec(window.location.pathname);
+    $("#overlay a.close").trigger("click");
+    History.pushState(null, null, lang + "/gallery/pixelart_"+(parseInt(a[1], 10)+1)+".html");
+  }); 
 
   $("body").delegate("#prev-image", "click", function(e){
     e.preventDefault();
-     var a = /gallery\/pixelart_(\d+)\.html/.exec(window.location.pathname);
-     $("#overlay a.close").trigger("click");
-     History.pushState(null, null, lang + "/gallery/pixelart_"+(parseInt(a[1], 10)-1)+".html");
-   });
+    var a = /gallery\/pixelart_(\d+)\.html/.exec(window.location.pathname);
+    $("#overlay a.close").trigger("click");
+    History.pushState(null, null, lang + "/gallery/pixelart_"+(parseInt(a[1], 10)-1)+".html");
+  });
 
+  function closeOverlay(){
+    $("#overlay").animate({"top":"-100%"},400, "easeInQuad", function(){
+      $("#overlay").attr('style', '');
+      $('.module-piece-detail').attr('style', '');
+      $('.letterbox').attr('style', '');
+      $("#overlay #bottomsection").attr('style', '');
+      $("#overlay .close").attr('style', '');
+    }); 
+  }
+  function loading(obj){
+    $("#overlay").show();
+    // Bottom section
+    $("#overlay #bottomsection .number").text('– No. 00'+obj+' -');
+    $("#overlay #bottomsection").animate({"bottom":"0px"},300, "easeInQuad");
+    // Close button
+    $("#overlay .close").animate({"opacity":"0.6"},300, "easeInQuad");
+
+    $("html").css("overflow-y","hidden");
+    $("#overlay").addClass('loaded');
+  }
 
   function gal(obj){
-    console.log(obj);
-    $("#overlay").show();
-    $("#overlay").addClass('loaded');
-    $("html").css("overflow-y","hidden");
-    $("#overlay .media").width($(window).outerWidth());
-    $("#bottomsection .number").text('– No. 00'+obj+' -');
-
     var real = works[(works.length + 1) - obj - 1];
 
     var img = real.data.images[0];
-
+    console.log(img.width >= $(window).outerWidth());
+    console.log('/// Img.WIDTH >= Window ');
+    console.log(img.height >= $(window).outerHeight());
+    console.log('/// Img.HEIGHT >= Window ');
     function middleScreen(){
-          $('.letterbox').width(img.width);
-          $('.letterbox').height(img.height);
-        $('.letterbox').css("margin-top", ( $('.module-piece-detail').height() -  $('.letterbox').height() ) / 2 );
+      $('.letterbox').width(img.width);
+      $('.letterbox').height(img.height);
+      $('.letterbox').css("margin-top", ( $('.module-piece-detail').height() -  $('.letterbox').height() ) / 2 );
     }
+    var heightOK, widthOK;
     function checkFit(cont, img){
-       console.log(cont.width() + " " + img.width );
-       console.log(cont.height() + " " + img.height);
       if (cont.width() >= img.width && cont.height() >= img.height){
-         imageFit = true;
+        console.log('Fit true!!!! ПОМЕЩАЕТСЯ');
+        imageFit = true;
       } else {
-         imageFit = false;
+        console.log('Fit false НЕТ НЕТ НЕТ НЕ ПОМЕЩАЕТСЯ!!!!');
+        imageFit = false;
+        if (cont.width() >= img.width){
+          widthOK = true;
+          console.log('ПО ШИрине ОК');
+        } 
+        if (cont.height() >= img.height){
+          heightOK = true;
+          console.log('ПО Высоте ОКОК');
+        } 
+
       }
       return imageFit;
     }
     var height;
 
-    if (img.height > $(window).outerHeight()) {
-      heights = $(window).outerHeight() / 2;
-      //obj.parent().css("height", heights);
-      //obj.parent().parent().css("height", heights);
-      height = img.height;
-    } else {
-      height = img.height;
-    }
+    //if (img.height > $(window).outerHeight()) {
+    //console.log(1);
+    //heights = $(window).outerHeight() / 2;
+    ////obj.parent().css("height", heights);
+    ////obj.parent().parent().css("height", heights);
+    //height = img.height;
+    //} else {
+    //console.log(2);
+    //height = img.height;
+    //}
 
-    //if (obj.data("width") > $(window).outerWidth()){
-      insane(img);
-     //}
+    var disable;
+    if (checkFit( $('#overlay') , img)) {
+      disable = true;
+    } else {
+      disable = false;
+      if(widthOK){
+        $('.module-piece-detail').width($(window).outerWidth());
+        $('.letterbox').css('width', img.width);
+
+      } else {
+        $('.module-piece-detail').width(img.width);
+        $('.letterbox').css('width', $(window).outerWidth());
+        $('.letterbox').css('margin-left', '-'+(img.width - $(window).outerWidth())+'px');
+
+      }
+
+    }
+    insane(img);
+    //}
 
     function insane(img){
       jQuery.infinitedrag('#love',
@@ -195,13 +246,19 @@ $(document).ready(function() {
                             oncreate: function($element, col, row) {
                               $element.html('<img src="/images/works/'+img.image_name+'"/>');
                             }});
-     if (checkFit( $('.module-piece-detail') , img)) {
-        console.log("ImageFit - disabling dragging");
-        $( "#love" ).draggable( "disable" );
-        middleScreen();
-     } else {
-        console.log($('.module-piece-detail').width());
-     }
+                            if(disable){
+                              console.log("DISABLE ALARM ALARM");
+                              $( "#love" ).draggable( "disable" );
+                            } else {
+
+                              $( "#love" ).draggable( "enable" );
+                            }
+
+                            if (checkFit( $('.module-piece-detail') , img)) {
+                              middleScreen();
+                            } else {
+
+                            }
     }
   }
 

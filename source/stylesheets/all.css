@@ -12,7 +12,15 @@ text-rendering: optimizeLegibility;
   font-family: sans-serif;
   position:relative;
   background: #fffcde;
+    
+  
 }
+
+    /*animation:myAnim1  5s steps(36,end);*/
+    /*-moz-animation:myAnim1 5s steps(36,end) infinite;*/
+    /*-webkit-animation:myAnim1 5s steps(36,end) infinite;*/
+
+*{box-sizing:border-box}
 body.gradient {
 background-image: linear-gradient(bottom, rgb(226,242,255) 43%, rgb(232,250,255) 72%, rgb(231,245,247) 86%);
 background-image: -o-linear-gradient(bottom, rgb(226,242,255) 43%, rgb(232,250,255) 72%, rgb(231,245,247) 86%);
@@ -70,7 +78,6 @@ z-index: 2;
   width:100%;
   margin:0px auto;
   overflow:hidden;
-  padding-top: 230px;
 }
 #logo{
   display:block;
@@ -216,6 +223,11 @@ padding:60px 0px 110px;
   padding: 0px 8%;
 
 }
+.inner_content{
+width:800px;
+margin: 250px auto 0px;
+padding-bottom:50px;
+}
 .photo-wrapper{
 position: relative;
 float: left;
@@ -267,10 +279,10 @@ display: block;*/
   display: block;
   
 }
-#header{
+.header{
   /*background:#fff46f;*/
 overflow: hidden;
-padding-bottom: 80px;
+padding-bottom: 100px;
 background: -moz-linear-gradient(top, rgba(255,252,222,1) 62%, rgba(255,252,222,0.79) 70%, rgba(255,255,255,0) 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(62%,rgba(255,252,222,1)), color-stop(70%,rgba(255,252,222,0.79)), color-stop(100%,rgba(255,255,255,0)));
 background: -webkit-linear-gradient(top, rgba(255,252,222,1) 62%,rgba(255,252,222,0.79) 70%,rgba(255,255,255,0) 100%);
@@ -283,17 +295,18 @@ left: 0;
 right: 0;
 z-index: 2;
 top: 43px;
+padding-top: 17px;
 }
-body.ru_about #header,
-body.about #header{
+#about_us .header{
   
-background: -moz-linear-gradient(top,  rgba(37,37,37,1) 62%, rgba(37,37,37,0.79) 70%, rgba(255,255,255,0) 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(62%,rgba(37,37,37,1)), color-stop(70%,rgba(37,37,37,0.79)), color-stop(100%,rgba(255,255,255,0)));
-background: -webkit-linear-gradient(top,  rgba(37,37,37,1) 62%,rgba(37,37,37,0.79) 70%,rgba(255,255,255,0) 100%);
-background: -o-linear-gradient(top,  rgba(37,37,37,1) 62%,rgba(37,37,37,0.79) 70%,rgba(255,255,255,0) 100%);
-background: -ms-linear-gradient(top,  rgba(37,37,37,1) 62%,rgba(37,37,37,0.79) 70%,rgba(255,255,255,0) 100%);
-background: linear-gradient(to bottom,  rgba(37,37,37,1) 62%,rgba(37,37,37,0.79) 70%,rgba(255,255,255,0) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#252525', endColorstr='#00ffffff',GradientType=0 );
+background: -moz-linear-gradient(top,  rgba(25,25,25,1) 0%, rgba(27,27,27,1) 19%, rgba(33,33,33,1) 64%, rgba(34,34,34,0.93) 70%, rgba(35,35,35,0.77) 76%, rgba(36,36,36,0.29) 86%, rgba(37,37,37,0) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(25,25,25,1)), color-stop(19%,rgba(27,27,27,1)), color-stop(64%,rgba(33,33,33,1)), color-stop(70%,rgba(34,34,34,0.93)), color-stop(76%,rgba(35,35,35,0.77)), color-stop(86%,rgba(36,36,36,0.29)), color-stop(100%,rgba(37,37,37,0)));
+background: -webkit-linear-gradient(top,  rgba(25,25,25,1) 0%,rgba(27,27,27,1) 19%,rgba(33,33,33,1) 64%,rgba(34,34,34,0.93) 70%,rgba(35,35,35,0.77) 76%,rgba(36,36,36,0.29) 86%,rgba(37,37,37,0) 100%);
+background: -o-linear-gradient(top,  rgba(25,25,25,1) 0%,rgba(27,27,27,1) 19%,rgba(33,33,33,1) 64%,rgba(34,34,34,0.93) 70%,rgba(35,35,35,0.77) 76%,rgba(36,36,36,0.29) 86%,rgba(37,37,37,0) 100%);
+background: -ms-linear-gradient(top,  rgba(25,25,25,1) 0%,rgba(27,27,27,1) 19%,rgba(33,33,33,1) 64%,rgba(34,34,34,0.93) 70%,rgba(35,35,35,0.77) 76%,rgba(36,36,36,0.29) 86%,rgba(37,37,37,0) 100%);
+background: linear-gradient(to bottom,  rgba(25,25,25,1) 0%,rgba(27,27,27,1) 19%,rgba(33,33,33,1) 64%,rgba(34,34,34,0.93) 70%,rgba(35,35,35,0.77) 76%,rgba(36,36,36,0.29) 86%,rgba(37,37,37,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#191919', endColorstr='#00252525',GradientType=0 );
+
 
   
 }
@@ -385,7 +398,13 @@ body.ru_about h5{
 .post{
   padding:20px 40px;
   margin:0 auto;
-  width:600px;
+width: 100%;
+display: block;
+height: 100%;
+opacity: 1;
+position: absolute;
+top: 43px;
+left: 0px;
   text-align:left;
   font-size:20px;
   line-height:30px;
@@ -404,10 +423,75 @@ body.ru_about .post a {
     color: rgba(21, 214, 111, 1);
     text-decoration:underline;
 }
+/* Setting up the "myAnim1" for all browser types
+-------------------------------------------------*/
+ @keyframes myAnim1 {
+    0% {
+        color: rgba(21, 214, 111, 1);
+    }
+    50% {
+        color: rgba(111, 254, 171, 1);
+    }
+    100% {
+        color: rgba(21, 214, 111, 1);
+    }
+}
+/* Firefox */
+ @-moz-keyframes myAnim1 {
+    0% {
+        color: rgba(21, 214, 111, 1);
+    }
+    50% {
+        color: rgba(111, 254, 171, 1);
+    }
+    100% {
+        color: rgba(21, 214, 111, 1);
+    }
+}
+/* Safari and Chrome */
+ @-webkit-keyframes myAnim1 {
+    0% {
+        color: rgba(21, 214, 111, 1);
+    }
+    50% {
+        color: rgba(111, 254, 171, 1);
+    }
+    100% {
+        color: rgba(21, 214, 111, 1);
+    }
+}
+/* Opera */
+ @-o-keyframes myAnim1 {
+    0% {
+        color: rgba(21, 214, 111, 1);
+    }
+    50% {
+        color: rgba(111, 254, 171, 1);
+    }
+    100% {
+        color: rgba(21, 214, 111, 1);
+    }
+}
+/* Attaching the animations to the elements
+Notice the difference between timing!!
+-------------------------------------------------*/
+
+body.about .post a:hover {
+    
+    -webkit-transition:color 0.3s ease;
+    -moz-transition:color 0.3s ease;
+    -ms-transition:color 0.3s ease;
+    -o-transition:color 0.3s ease;
+    transition:color 0.3s ease;
+    
+    animation:myAnim1  1s steps(36,end);
+    -moz-animation:myAnim1 1s steps(36,end) infinite;
+    -webkit-animation:myAnim1 1s steps(36,end) infinite;
+}
 .letterbox{
   padding:0px 0px 0px 0px;
   /*margin-left:-20px;*/
-  background: #000;
+  background: red;
   border-radius:2px;
   overflow:hidden;
   width:540px;
@@ -551,7 +635,7 @@ max-height: 100%;
 text-align: right;
 position: relative;
 }
-#overlay.loaded > section{
+#overlay.loaded > .loading > section{
 		overflow:hidden; /* Occlude elements outside viewport! */
 		background-color:#000;
 position: absolute;
@@ -562,12 +646,12 @@ top: 0;
 bottom: 70px;
   
 }
-#overlay.loaded > section .media{
+#overlay.loaded > .loading  > section .media{
   height: 100%;
   overflow: hidden;
   display: block;
 }
-#overlay > section.module-piece-detail .media, #overlay > section.module-piece-detail .media + aside {
+#overlay > .loading > section.module-piece-detail .media, #overlay  > .loading > section.module-piece-detail .media + aside {
 display: inline-block;
 vertical-align: middle;
 white-space: normal;
@@ -575,7 +659,7 @@ white-space: normal;
 .media img{
   border-radius: 7px;
 }
-#overlay #small_logo{
+#overlay .loading #small_logo{
   width:80px;
   height:48px;
   display:block;
@@ -586,13 +670,13 @@ white-space: normal;
   top: 21px;
   left: 21px;
 }
-#overlay #bottomsection{
+#overlay .loading #bottomsection{
   background:#fff;
-height: 70px;
-position: fixed;
-bottom: 0;
-left: 0;
-right: 0;
+  height: 70px;
+  position: fixed;
+  bottom: -70px;
+  left: 0;
+  right: 0;
 }
 #bottomsection .icon{
   color:#000;
@@ -649,6 +733,14 @@ perspective: 200;
 -o-transform-style: preserve-3d;
 transform-style: preserve-3d;
 display:none;
+}
+#overlay *{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+#overlay img{
+ pointer-events: none;
 }
 /*
 	This software is the property of Hoefler & Frere-Jones (H&FJ).
