@@ -164,7 +164,6 @@ nav[role="navigation"] ul a.active em {
  body.ru_about nav[role="navigation"] ul a.active strong {
     color: rgba(21, 214, 111, 0.7);
  }
-
 #start{
   -moz-border-radius: 18px; /* from vector shape */
   -webkit-border-radius: 18px; /* from vector shape */
@@ -491,7 +490,7 @@ body.about .post a:hover {
 .letterbox{
   padding:0px 0px 0px 0px;
   /*margin-left:-20px;*/
-  background: red;
+  background: #000;
   border-radius:2px;
   overflow:hidden;
   width:540px;
@@ -680,19 +679,39 @@ white-space: normal;
 }
 #bottomsection .icon{
   color:#000;
-  font-size:30px;
+  font-size:0px;
   text-decoration:none;
-  line-height:80px;
+  line-height:70px;
 }
-#bottomsection .icon-move-horizontal{
+#bottomsection #prev-image{
   float:left;
   padding:0px 30px;
   border-right:1px dotted #211b1f;
 }
-#bottomsection .icon-move{
+#bottomsection #next-image{
   float:right;
   padding:0px 30px;
   border-left:1px dotted #211b1f;
+}
+#prev-image span{
+	border-right: 20px solid #000;
+}
+#next-image span{
+	border-left: 20px solid #000;
+}
+#bottomsection .icon b{
+top: 6px;
+width: 15px;
+height: 12px;
+background: #000;
+display: inline-block;
+position: relative;
+}
+#bottomsection .icon span{
+	width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
 }
 
 .wrapper {

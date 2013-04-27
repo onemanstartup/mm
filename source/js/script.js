@@ -24,6 +24,7 @@ $(document).ready(function() {
     $("body").addClass("about");
     $("#works").hide();
     $("#about_us").css({"display":"block"});
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     $("#about_us").animate({opacity:1},800,'easeInQuart');
     if (lang === "/ru"){
       $("#page_switch").text("назад к галлерее работ").attr("href", "/ru/");
