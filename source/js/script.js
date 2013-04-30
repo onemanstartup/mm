@@ -14,7 +14,6 @@ $(document).ready(function() {
 
   router = new Router();
   router.route('*lang/about.html', function(lang){
-    console.log("loading about.html" + " " + lang);
     $("body").addClass("about");
     $("#works").hide();
     $("#about_us").css({"display":"block"});
@@ -38,7 +37,6 @@ $(document).ready(function() {
     } else {
       $("#next-image.disabled").removeClass("disabled");
     }
-    console.log('galllery');
     reset();
     load_main();
     loading(parseInt(id,10));
@@ -107,14 +105,12 @@ $(document).ready(function() {
 
   function enableonpopstate(){
     window.onpopstate = function(event) {
-      console.log("location: " + document.location + ", state: " + JSON.stringify(event.state));
       if (window.location.pathname === "/about.html"){
         router.navigate("/about.html");
       }else if(window.location.pathname === "/"){
         reset();
         load_main();
       } else {
-        console.log(window.location.pathname);
         router.navigate(window.location.pathname);
       }
     };
@@ -189,10 +185,6 @@ $(document).ready(function() {
     var real = works[(works.length + 1) - obj - 1];
 
     var img = real.data.images[0];
-    console.log(img.width >= $(window).outerWidth());
-    console.log('/// Img.WIDTH >= Window ');
-    console.log(img.height >= $(window).outerHeight());
-    console.log('/// Img.HEIGHT >= Window ');
     function middleScreen(){
       $('.letterbox').width(img.width);
       $('.letterbox').height(img.height);
@@ -201,18 +193,14 @@ $(document).ready(function() {
     var heightOK, widthOK;
     function checkFit(cont, img){
       if (cont.width() >= img.width && cont.height() >= img.height){
-        console.log('Fit true!!!! ПОМЕЩАЕТСЯ');
         imageFit = true;
       } else {
-        console.log('Fit false НЕТ НЕТ НЕТ НЕ ПОМЕЩАЕТСЯ!!!!');
         imageFit = false;
         if (cont.width() >= img.width){
           widthOK = true;
-          console.log('ПО ШИрине ОК');
         } 
         if (cont.height() >= img.height){
           heightOK = true;
-          console.log('ПО Высоте ОКОК');
         } 
 
       }
@@ -284,7 +272,6 @@ $(document).ready(function() {
                               loadAndSpin($element, img.image_name);
                             }});
                             if(disable){
-                              console.log("DISABLE ALARM ALARM");
                               $( "#love" ).draggable( "disable" );
                             } else {
 
