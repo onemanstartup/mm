@@ -1,6 +1,6 @@
 require "rvm/capistrano"
 set :rvm_ruby_string, '1.9.3'
-set :rvm_type, :system
+#set :rvm_type, :system
 require "bundler/capistrano"
 default_run_options[:pty] = true  # Must be set for the password prompt
                                   # from git to work
