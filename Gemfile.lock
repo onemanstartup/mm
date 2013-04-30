@@ -1,5 +1,6 @@
-PATH
-  remote: lib/middleman-livereload
+GIT
+  remote: git://github.com/onemanstartup/middleman-livereload.git
+  revision: 6eb5d400998b2b9ba931491888fea00af0d05078
   specs:
     middleman-livereload (3.0.1)
       em-websocket (>= 0.2.0)
