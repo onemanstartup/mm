@@ -130,9 +130,7 @@ var works = [
 </div>
 <script type="text/template" id="cardTemplate">
 <div class="cari" style="max-width:{3}px">
-            <a href="works/{0}.html" class="gallery_img_next"  data-index="{0}">
-            <img src='/images/works/{2}' class="gal_img" >
-              <div class="bottomt">
+            <a href="works/{0}.html" class="gallery_img_next"  data-index="{0}"><img class="gal_img lazy" src="/images/grey.gif" data-original='/images/works/{2}' width='{3}' height='{4}' ><noscript><img src="/images/works/{2}" width="{3}" heigh="{4}"></noscript><div class="bottomt">
                 <span class="number">
                   – No. 00{0} –
                 </span>

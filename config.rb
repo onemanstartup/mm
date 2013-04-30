@@ -194,23 +194,25 @@ page "/ru/", :proxy => "/localizable/index.html"
 #   end
 # end
 activate :i18n, :langs => [:en, :ru]
-
+activate :sprockets
+set :debug_assets, true
 set :css_dir, 'stylesheets'
 #set :logging, true
 set :js_dir, 'js'
 
 set :images_dir, 'images'
-#activate :livereload
+activate :livereload
+
 activate :admin
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+   activate :minify_css
     # Minify Javascript on build
-  # activate :minify_javascript
+   activate :minify_javascript
   
   # Enable cache buster
-  # activate :cache_buster
+   activate :cache_buster
   
   # Use relative URLs
   # activate :relative_assets
