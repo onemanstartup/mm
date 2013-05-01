@@ -60,6 +60,7 @@ namespace :deploy do
     run "mkdir -p #{fetch :releases_path}"
   end
   task :build_site do
+    run "cd #{deploy_to}current && bundle"
     run "cd #{deploy_to}current && bundle exec middleman build"
   end
 end

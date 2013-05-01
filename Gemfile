@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem "middleman", :github => "middleman/middleman", :branch => 'master'
+gem "middleman", :github => "onemanstartup/middleman", :branch => 'master'
 
 gem "middleman-livereload", :github => "onemanstartup/middleman-livereload"
 gem "fastimage"
