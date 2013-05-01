@@ -18,6 +18,17 @@ set :deploy_via, :remote_cache
 set :shared_children, shared_children + %w{data}
 set :copy_exclude, [".git", ".DS_Store", ".gitignore", ".gitmodules"]
 
+
+
+
+after  'deploy:update_code' do
+  run 'bundle exec middleman build'
+end
+
+
+
+
+
 set :deploy_to, "/home/deploy/#{folder}/"
 set :domain, "megapont.ru"
 
