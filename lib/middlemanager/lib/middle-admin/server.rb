@@ -103,8 +103,17 @@ module MiddleManager
   end
 
   get '/build' do
-    Middleman::Cli::Build.new.build
+    ::Middleman::Cli::Build.new.build
     redirect to('/'), 303
+  end
+
+  post '/upload' do
+    file = params[:file]
+    filename = file[:filename]
+    tempfile = file[:tempfile]
+    FileUtils.mkdir_p 'source/images/' + params[:folder]
+    FileUtils.mv tempfile.path, "source/images/"+params[:folder]+"/#{filename}"
+    redirect '/admin'
   end
 end
 end

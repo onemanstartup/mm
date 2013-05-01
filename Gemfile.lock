@@ -1,10 +1,49 @@
 GIT
+  remote: git://github.com/middleman/middleman-sprockets.git
+  revision: 22df714de47cd95459572c319be775fd4fad9480
+  branch: master
+  specs:
+    middleman-sprockets (3.1.0)
+      middleman-more (>= 3.0.11)
+      sprockets (~> 2.1)
+      sprockets-sass (~> 0.9.1)
+
+GIT
+  remote: git://github.com/middleman/middleman.git
+  revision: aaf90be163bac1828d2c5b8b1373ade2ecf4c514
+  branch: master
+  specs:
+    middleman (3.1.0.beta.2)
+      middleman-core (= 3.1.0.beta.2)
+      middleman-more (= 3.1.0.beta.2)
+      middleman-sprockets (>= 3.0.10)
+    middleman-core (3.1.0.beta.2)
+      activesupport (~> 3.2.6)
+      bundler (~> 1.1)
+      listen (~> 1.0.2)
+      rack (>= 1.4.5)
+      rack-test (~> 0.6.1)
+      thor (~> 0.17.0)
+      tilt (~> 1.3.6)
+    middleman-more (3.1.0.beta.2)
+      coffee-script (~> 2.2.0)
+      compass (>= 0.12.2)
+      execjs (~> 1.4.0)
+      haml (>= 3.1.6)
+      i18n (~> 0.6.4)
+      kramdown (~> 1.0.0)
+      middleman-core (= 3.1.0.beta.2)
+      padrino-helpers (= 0.11.1)
+      sass (>= 3.1.20)
+      uglifier (~> 2.0.1)
+
+GIT
   remote: git://github.com/onemanstartup/middleman-livereload.git
-  revision: 6eb5d400998b2b9ba931491888fea00af0d05078
+  revision: 4d22af49e03ba4931551296a80d76c1779eed847
   specs:
     middleman-livereload (3.0.1)
       em-websocket (>= 0.2.0)
-      middleman-core (= 3.1.0.beta.1)
+      middleman-core (= 3.1.0.beta.2)
       multi_json (~> 1.0)
       rack-livereload
 
@@ -21,6 +60,8 @@ GEM
     activesupport (3.2.12)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    autoprefixer-rails (0.3.20130427)
+      execjs
     builder (3.2.0)
     capistrano (2.15.4)
       highline
@@ -46,53 +87,30 @@ GEM
       multi_json (~> 1.0)
     fastimage (1.3.0)
     fastthread (1.0.7)
+    ffi (1.8.1)
     fssm (0.2.10)
     haml (4.0.2)
       tilt
     highline (1.6.18)
     hike (1.2.2)
     http_parser.rb (0.5.3)
-    http_router (0.10.2)
+    http_router (0.11.0)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
     i18n (0.6.4)
     json (1.7.7)
     kramdown (1.0.1)
     libv8 (3.11.8.17)
-    listen (0.7.3)
+    listen (1.0.3)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+      rb-kqueue (>= 0.2)
     maruku (0.6.1)
       syntax (>= 1.0.0)
-    middleman (3.1.0.beta.1)
-      middleman-core (= 3.1.0.beta.1)
-      middleman-more (= 3.1.0.beta.1)
-      middleman-sprockets (~> 3.0.10)
     middleman-blog (3.2.0)
       maruku (~> 0.6.0)
       middleman-core (~> 3.0)
       tzinfo (~> 0.3.0)
-    middleman-core (3.1.0.beta.1)
-      activesupport (~> 3.2.6)
-      bundler (~> 1.1)
-      listen (~> 0.7.3)
-      rack (~> 1.4.1)
-      rack-test (~> 0.6.1)
-      thor (~> 0.15.4)
-      tilt (~> 1.3.6)
-    middleman-more (3.1.0.beta.1)
-      coffee-script (~> 2.2.0)
-      compass (>= 0.12.2)
-      execjs (~> 1.4.0)
-      haml (>= 3.1.6)
-      i18n (~> 0.6.4)
-      kramdown (~> 1.0.0)
-      middleman-core (= 3.1.0.beta.1)
-      padrino-helpers (= 0.10.7)
-      sass (>= 3.1.20)
-      uglifier (~> 1.3.0)
-    middleman-sprockets (3.0.11)
-      middleman-more (>= 3.0.11)
-      sprockets (~> 2.1)
-      sprockets-sass (~> 0.9.1)
     multi_json (1.7.2)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
@@ -101,21 +119,22 @@ GEM
     net-ssh (2.6.7)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
-    padrino-core (0.10.7)
-      activesupport (~> 3.2.0)
-      http_router (~> 0.10.2)
-      sinatra (~> 1.3.1)
-      thor (~> 0.15.2)
+    padrino-core (0.11.1)
+      activesupport (>= 3.1.0)
+      http_router (~> 0.11.0)
+      rack-protection (>= 1.5.0)
+      sinatra (~> 1.4.2)
+      thor (~> 0.17.0)
       tilt (~> 1.3.0)
-    padrino-helpers (0.10.7)
+    padrino-helpers (0.11.1)
       i18n (~> 0.6)
-      padrino-core (= 0.10.7)
+      padrino-core (= 0.11.1)
     passenger (3.0.19)
       daemon_controller (>= 1.0.0)
       fastthread (>= 1.0.1)
       rack
       rake (>= 0.8.1)
-    rack (1.4.5)
+    rack (1.5.2)
     rack-livereload (0.3.13)
       rack
     rack-protection (1.5.0)
@@ -124,14 +143,18 @@ GEM
       rack (>= 1.0)
     rake (10.0.4)
     rb-fsevent (0.9.3)
+    rb-inotify (0.9.0)
+      ffi (>= 0.5.0)
+    rb-kqueue (0.2.0)
+      ffi (>= 0.5.0)
     ref (1.0.4)
     rvm-capistrano (1.3.0)
       capistrano (>= 2.0.0)
     sass (3.2.8)
-    sinatra (1.3.6)
-      rack (~> 1.4)
-      rack-protection (~> 1.3)
-      tilt (~> 1.3, >= 1.3.3)
+    sinatra (1.4.2)
+      rack (~> 1.5, >= 1.5.2)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
     sprockets (2.9.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -140,14 +163,18 @@ GEM
     sprockets-sass (0.9.1)
       sprockets (~> 2.0)
       tilt (~> 1.1)
+    stylus (0.7.1)
+      execjs
+      stylus-source
+    stylus-source (0.31.0)
     syntax (1.0.0)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
-    thor (0.15.4)
+    thor (0.17.0)
     tilt (1.3.7)
     tzinfo (0.3.37)
-    uglifier (1.3.0)
+    uglifier (2.0.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     url_mount (0.2.1)
@@ -157,17 +184,19 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   builder
   capistrano
   fastimage
   json
   libv8 (~> 3.11.8)
-  middleman (= 3.1.0.beta.1)
+  middleman!
   middleman-blog
   middleman-livereload!
-  middleman-sprockets
+  middleman-sprockets!
   middlemanager!
   passenger
   rb-fsevent (~> 0.9)
   rvm-capistrano
+  stylus
   therubyracer

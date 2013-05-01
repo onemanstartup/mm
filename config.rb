@@ -2,12 +2,12 @@ require 'middle_admin'
 require 'fastimage'
 require 'json'
 
-activate :blog do |blog|
-  blog.paginate = true
-  blog.page_link = "p:num"
-  blog.per_page = 20
-  blog.sources = "blog/:year-:month-:day-:title"
-end
+#activate :blog do |blog|
+  #blog.paginate = true
+  #blog.page_link = "p:num"
+  #blog.per_page = 20
+  #blog.sources = "blog/:year-:month-:day-:title"
+#end
 
 #require "source/lib/custom_helpers"
 #helpers CustomHelpers
@@ -90,9 +90,7 @@ end
     #   
     
 
-
 # Works
-#
 ignore "work_template.html"
 ignore "ru/work_template.html"
 
@@ -130,21 +128,23 @@ end
 
 # Pages
 #
-@manager_pages ||= MiddleManager::Manager.new(store_dir:'data/', filename:'middle_manager_pages.yml')
-@pages = @manager_pages.pages.all
-@pages.each_with_index do |work, index|
-  page "/post/#{index}.html", :proxy => "/localizable/post_template.html", :ignore => true do
-    @title = work.title
-  end
-end
+#@manager_pages ||= MiddleManager::Manager.new(store_dir:'data/', filename:'middle_manager_pages.yml')
+#@pages = @manager_pages.pages.all
+#@pages.each_with_index do |work, index|
+  #page "/post/#{index}.html", :proxy => "/localizable/post_template.html", :ignore => true do
+    #@title = work.title
+  #end
+#end
 
-page_articles = @pages
-articles = @pages
+#page_articles = @pages
+#articles = @pages
 page "/about.html", :proxy => "/localizable/index.html"
 page "ru/about.html", :proxy => "/localizable/index.html"
 page "/ru/", :proxy => "/localizable/index.html"
 
-
+ignore /^data.+/
+ignore /^feed.+/
+ignore /^tag.+/
 ### 
 # Compass
 ###
@@ -195,6 +195,10 @@ page "/ru/", :proxy => "/localizable/index.html"
 # end
 activate :i18n, :langs => [:en, :ru]
 activate :sprockets
+after_configuration do
+  AutoprefixerRails.install(sprockets)
+end
+
 set :debug_assets, true
 set :css_dir, 'stylesheets'
 #set :logging, true

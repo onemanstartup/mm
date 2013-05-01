@@ -11,12 +11,6 @@ about.html@cc: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   value: asd
   title: Welcome to Megapont
   options: {}
-ru/about.html@Headline:
-  :path: ru/about.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
 ru/about.html@cc:
   :path: ru/about.html
   :name: cc
@@ -33,12 +27,6 @@ work.html@cc:
   :path: work.html
   :name: cc
   :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-index.html@Headline:
-  :path: index.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
   :title: Welcome to Megapont
   :options: {}
 index.html@cc:
@@ -249,5 +237,17 @@ ru/gallery/pixelart_7.html@cc:
   :path: ru/gallery/pixelart_7.html
   :name: cc
   :value: ! '{{ mgmt cc }}'
+  :title: Welcome to Megapont
+  :options: {}
+index.html@Headline:
+  :path: index.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
+  :title: Welcome to Megapont
+  :options: {}
+ru/about.html@Headline:
+  :path: ru/about.html
+  :name: Headline
+  :value: ! '{{ mgmt Headline }}'
   :title: Welcome to Megapont
   :options: {}

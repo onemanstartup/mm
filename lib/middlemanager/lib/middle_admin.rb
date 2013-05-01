@@ -4,6 +4,7 @@ require "middle-admin/manager"
 
 module MiddleManager
   class << self
+    attr_accessor :app
     def registered(app)
       app.send :map, "/admin" do
 
@@ -12,6 +13,7 @@ module MiddleManager
         run ::MiddleManager::Server
 
       end
+      self.app = app
       app.send :include, InstanceMethods
     end
     alias :included :registered

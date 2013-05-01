@@ -10,4 +10,4 @@
 //= require "history.adapter.jquery"
 //= require "router"
 //= require "script"
-
+//= require "start"
