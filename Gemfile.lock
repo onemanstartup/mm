@@ -9,18 +9,8 @@ GIT
       sprockets-sass (~> 0.9.1)
 
 GIT
-  remote: git://github.com/onemanstartup/middleman-livereload.git
-  revision: 4d22af49e03ba4931551296a80d76c1779eed847
-  specs:
-    middleman-livereload (3.0.1)
-      em-websocket (>= 0.2.0)
-      middleman-core (= 3.1.0.beta.2)
-      multi_json (~> 1.0)
-      rack-livereload
-
-GIT
-  remote: git://github.com/onemanstartup/middleman.git
-  revision: 80daaa4957e8f98186f3428b3fd78a18d2a53881
+  remote: git://github.com/middleman/middleman.git
+  revision: fa17134c0aa03444494699f9a8422842147b66db
   branch: master
   specs:
     middleman (3.1.0.beta.2)
@@ -46,6 +36,16 @@ GIT
       padrino-helpers (= 0.11.1)
       sass (>= 3.1.20)
       uglifier (~> 2.0.1)
+
+GIT
+  remote: git://github.com/onemanstartup/middleman-livereload.git
+  revision: 4d22af49e03ba4931551296a80d76c1779eed847
+  specs:
+    middleman-livereload (3.0.1)
+      em-websocket (>= 0.2.0)
+      middleman-core (= 3.1.0.beta.2)
+      multi_json (~> 1.0)
+      rack-livereload
 
 PATH
   remote: lib/middlemanager
