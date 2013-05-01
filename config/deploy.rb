@@ -21,9 +21,6 @@ set :copy_exclude, [".git", ".DS_Store", ".gitignore", ".gitmodules"]
 
 
 
-after  'deploy:update_code' do
-  run 'bundle exec middleman build'
-end
 
 
 
@@ -55,8 +52,14 @@ server "#{domain}", :app, :web, :db, :primary => true
 # end
 #
 after "deploy:setup", "deploy:create_release_dir"
+after  'deploy' , "deploy:build_site"
+
+
 namespace :deploy do
   task :create_release_dir, :except => {:no_release => true} do
     run "mkdir -p #{fetch :releases_path}"
+  end
+  task :build_site do
+    run "cd #{deploy_to}current && bundle exec middleman build"
   end
 end
