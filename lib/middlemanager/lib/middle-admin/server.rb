@@ -1,19 +1,19 @@
 require 'psych'
 require 'yaml'
 require 'yaml/store'
-require 'sinatra/base'
-require "sinatra/reloader"
+require 'sinatra'
+require 'sinatra/contrib/all'
 require 'thor'
-
 module MiddleManager
   class Server < Sinatra::Base
+    register Sinatra::Contrib
+    enable :logging
     configure :production, :development do
-      enable :logging
-      register Sinatra::Reloader
+      
     end
-
     use Rack::MethodOverride
-
+    set :root, File.join(File.dirname(__FILE__), '..', '..')
+    #set :public_folder, Proc.new { File.join(root, "public") }
     set :views, File.join(File.dirname(__FILE__), '..', '..', 'views')
 
     def manager
@@ -105,6 +105,12 @@ module MiddleManager
 
   get '/build' do
     ::Middleman::Cli::Build.new.build
+    redirect to('/'), 303
+  end
+
+  get '/commit' do
+    g = Git.open(File.join(File.dirname(__FILE__), '..', '..', '..', '..'), :log => Logger.new(STDOUT))
+    g.add(:all=>true) 
     redirect to('/'), 303
   end
 

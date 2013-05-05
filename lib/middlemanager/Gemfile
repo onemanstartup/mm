@@ -1,13 +1,11 @@
 source "http://rubygems.org"
 
 gem "sinatra"
+gem 'sinatra-contrib'
 gem "shotgun"
 gem "thor"
 gem "thin"
 gem "psych", "1.2.2"
-
+gem "git"
 # for the Middleman extension
-gem "middleman", "3.0.6"
-
-# for debugging during development
-gem "ruby-debug19"
+gem "middleman"

@@ -13,5 +13,7 @@ Gem::Specification.new do |s|
   s.require_path  = 'lib'
 
   s.add_runtime_dependency('sinatra')
+  s.add_runtime_dependency('sinatra-contrib')
+  s.add_runtime_dependency('git')
   s.add_runtime_dependency('thor')
 end

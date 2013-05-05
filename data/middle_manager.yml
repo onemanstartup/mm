@@ -2,18 +2,18 @@
 index.html@body_eng: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   path: index.html
   name: body_eng
-  value: ! "        \r\n\r\n## Header\r\n\r\n        I’m Jonathan Ogden (also known
-    as Oggy). A Web Designer at The Message and a lover of all things creative. In
-    my spare time I make videos, design things, write music, drink tea (pictured)
-    and some other stuff.\r\n\r\n        I’ve lived in Salford (near Manchester) in
-    the UK all my life. I started getting into creative hobbies at the age of 10,
-    starting with some little flash animations. A couple of years later I got into
-    making films too, then music, then graphic design, then web design, then music
-    again. I still dabble in all of them although web design is my full time job now.\r\n\r\n
-    \       If you want you can download our <a> pdf presentation</a> or send us [email]().\r\n\r\n#####
-    Follow us on...\r\n\r\n*   [Twitter](#)\r\n*   [Tumblr](#)\r\n*   [Dribbble](#)\r\n\r\n#####
-    Press info\r\n\r\nIf you want to mention us in blog post or article, give us a
-    hint, we provide you any information or answer your questions.\r\n\r\n##### Testimonials\r\n\r\nLookatme
+  value: ! "## Header\r\n\r\nI’m Jonathan Ogden (also known as Oggy). A Web Designer
+    at The Message and a lover of all things creative. In my spare time I make videos,
+    design things, write music, drink tea (pictured) and some other stuff.\r\n\r\nI’ve
+    lived in Salford (near Manchester) in the UK all my life. I started getting into
+    creative hobbies at the age of 10, starting with some little flash animations.
+    A couple of years later I got into making films too, then music, then graphic
+    design, then web design, then music again. I still dabble in all of them although
+    web design is my full time job now.\r\n\r\n        If you want you can download
+    our <a> pdf presentation</a> or send us [email]().\r\n\r\n##### Follow us on...\r\n\r\n*
+    \  [Twitter](#)\r\n*   [Tumblr](#)\r\n*   [Dribbble](#)\r\n\r\n##### Press info\r\n\r\nIf
+    you want to mention us in blog post or article, give us a hint, we provide you
+    any information or answer your questions.\r\n\r\n##### Testimonials\r\n\r\nLookatme
     – they are simply the best, was pleasure to work with\r\n\r\nBBDO – fast & perfect\r\n\r\n#####
     Jobs\r\n\r\nWe'll be very happy if we find soulmate who have passion in making
     beautiful art and making money on it, send us email with your works or just ask
