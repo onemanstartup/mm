@@ -1,253 +1,61 @@
 ---
-about.html@Headline: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
-  path: about.html
-  name: Headline
-  value: About
+index.html@body_eng: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  path: index.html
+  name: body_eng
+  value: ! "        \r\n\r\n## Header\r\n\r\n        I’m Jonathan Ogden (also known
+    as Oggy). A Web Designer at The Message and a lover of all things creative. In
+    my spare time I make videos, design things, write music, drink tea (pictured)
+    and some other stuff.\r\n\r\n        I’ve lived in Salford (near Manchester) in
+    the UK all my life. I started getting into creative hobbies at the age of 10,
+    starting with some little flash animations. A couple of years later I got into
+    making films too, then music, then graphic design, then web design, then music
+    again. I still dabble in all of them although web design is my full time job now.\r\n\r\n
+    \       If you want you can download our <a> pdf presentation</a> or send us [email]().\r\n\r\n#####
+    Follow us on...\r\n\r\n*   [Twitter](#)\r\n*   [Tumblr](#)\r\n*   [Dribbble](#)\r\n\r\n#####
+    Press info\r\n\r\nIf you want to mention us in blog post or article, give us a
+    hint, we provide you any information or answer your questions.\r\n\r\n##### Testimonials\r\n\r\nLookatme
+    – they are simply the best, was pleasure to work with\r\n\r\nBBDO – fast & perfect\r\n\r\n#####
+    Jobs\r\n\r\nWe'll be very happy if we find soulmate who have passion in making
+    beautiful art and making money on it, send us email with your works or just ask
+    us if you want to work with us, but don't have experience\r\n\r\n##### Our friends\r\n\r\nHere
+    friends whose works we are appreciate, check them out!\r\n\r\n*   [onemanstartup](#)\r\n*
+    \  [Weasly Grizzly](#)\r\n*   [Balamoot](#)"
   title: Welcome to Megapont
   options: {}
-about.html@cc: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
-  path: about.html
-  name: cc
-  value: asd
+index.html@body_ru: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
+  path: index.html
+  name: body_ru
+  value: ! "        \r\n\r\n## \r\n\r\nХУй заголовок\r\n\r\n        {{ mgmt cc }}\r\n\r\n
+    \       I’m Jonathan Ogden (also known as Oggy). A Web Designer at The Message
+    and a lover of&nbsp;all things creative. In my spare time I make videos, design
+    things, write music, drink tea (pictured) and some other stuff.\r\n\r\n        I’ve
+    lived in Salford (near Manchester) in the UK all my life. I started getting into
+    creative hobbies at the age of 10, starting with some little flash animations.
+    A couple of years later I got into making films too, then music, then graphic
+    design, then web design, then music again. I still dabble in all of them although
+    web design is my full time job now.\r\n\r\n        If you want you can download
+    our <a> pdf presentation</a> or send us [email]().\r\n\r\n##### Follow us on...\r\n\r\n*
+    \  [Twitter](#)\r\n*   [Tumblr](#)\r\n*   [Dribbble](#)\r\n\r\n##### Press info\r\n\r\nIf
+    you want to mention us in blog post or article, give us a hint, we provide you
+    any information or answer your questions.\r\n\r\n##### Testimonials\r\n\r\nLookatme
+    – they are simply the best, was pleasure to work with\r\n\r\nBBDO – fast &amp;
+    perfect\r\n\r\n##### Jobs\r\n\r\nWe'll be very happy if we find soulmate who have
+    passion in making beautiful art and making money on it, send us email with your
+    works or just ask us if you want to work with us, but don't have experience\r\n\r\n#####
+    Our friends\r\n\r\nHere friends whose works we are appreciate, check them out!\r\n\r\n*
+    \  [onemanstartup](#)\r\n*   [Weasly Grizzly](#)\r\n*   [Balamoot](#)"
+  html: ! ' '
   title: Welcome to Megapont
   options: {}
-ru/about.html@cc:
-  :path: ru/about.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
+about.html@body_ru:
+  :path: about.html
+  :name: body_ru
+  :value: ! '{{ mgmt body_ru }}'
   :title: Welcome to Megapont
   :options: {}
-work.html@Headline:
-  :path: work.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-work.html@cc:
-  :path: work.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-index.html@cc:
-  :path: index.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/index.html@Headline:
-  :path: ru/index.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/index.html@cc:
-  :path: ru/index.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-index.html@Headline:
-  :path: index.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_1.html@Headline:
-  :path: gallery/pixelart_1.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_1.html@cc:
-  :path: gallery/pixelart_1.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_0.html@Headline:
-  :path: ru/gallery/pixelart_0.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_0.html@cc:
-  :path: ru/gallery/pixelart_0.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_2.html@Headline:
-  :path: gallery/pixelart_2.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_2.html@cc:
-  :path: gallery/pixelart_2.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_1.html@Headline:
-  :path: ru/gallery/pixelart_1.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_1.html@cc:
-  :path: ru/gallery/pixelart_1.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_3.html@Headline:
-  :path: gallery/pixelart_3.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_3.html@cc:
-  :path: gallery/pixelart_3.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_2.html@Headline:
-  :path: ru/gallery/pixelart_2.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_2.html@cc:
-  :path: ru/gallery/pixelart_2.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_4.html@Headline:
-  :path: gallery/pixelart_4.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_4.html@cc:
-  :path: gallery/pixelart_4.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_3.html@Headline:
-  :path: ru/gallery/pixelart_3.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_3.html@cc:
-  :path: ru/gallery/pixelart_3.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_5.html@Headline:
-  :path: gallery/pixelart_5.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_5.html@cc:
-  :path: gallery/pixelart_5.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_4.html@Headline:
-  :path: ru/gallery/pixelart_4.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_4.html@cc:
-  :path: ru/gallery/pixelart_4.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_6.html@Headline:
-  :path: gallery/pixelart_6.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_6.html@cc:
-  :path: gallery/pixelart_6.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_5.html@Headline:
-  :path: ru/gallery/pixelart_5.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_5.html@cc:
-  :path: ru/gallery/pixelart_5.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_7.html@Headline:
-  :path: gallery/pixelart_7.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_7.html@cc:
-  :path: gallery/pixelart_7.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_6.html@Headline:
-  :path: ru/gallery/pixelart_6.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_6.html@cc:
-  :path: ru/gallery/pixelart_6.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_8.html@Headline:
-  :path: gallery/pixelart_8.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-gallery/pixelart_8.html@cc:
-  :path: gallery/pixelart_8.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_7.html@Headline:
-  :path: ru/gallery/pixelart_7.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/gallery/pixelart_7.html@cc:
-  :path: ru/gallery/pixelart_7.html
-  :name: cc
-  :value: ! '{{ mgmt cc }}'
-  :title: Welcome to Megapont
-  :options: {}
-ru/about.html@Headline:
-  :path: ru/about.html
-  :name: Headline
-  :value: ! '{{ mgmt Headline }}'
+about.html@body_eng:
+  :path: about.html
+  :name: body_eng
+  :value: ! '{{ mgmt body_eng }}'
   :title: Welcome to Megapont
   :options: {}

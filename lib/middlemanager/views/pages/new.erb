@@ -5,23 +5,17 @@
     <div class="span10">
   
   <form class="form-stacked" action="<%= url("/page/create") %>" method="POST">
-      <label>
         <h3><span style="font-weight: normal">Creating new page</span></h3>
         <p>
-          <label>Category
-        <input class="span5" type="text" name="page[category]"></textarea></label>
+        <label>Category</label>
+        <input class="span5" type="text" name="page[category]">
         <label>Title</label>
         <input class="span5" type="text" name="page[title]">
         <label>Body</label>
         <textarea class="xxlarge" style="margin: 0.5em 0;" rows="3" name="page[body]"></textarea>
         <label>Name(permalink)</label>
           <input class="span5" type="text" name="page[name]">
-        
-          <span class="help-block">
-            Creating new page
-          </span>
         </p>
-      </label>
     
     <div class="actions">
       <div style="display: inline-block;">

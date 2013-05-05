@@ -2,12 +2,14 @@ require 'psych'
 require 'yaml'
 require 'yaml/store'
 require 'sinatra/base'
+require "sinatra/reloader"
 require 'thor'
 
 module MiddleManager
   class Server < Sinatra::Base
     configure :production, :development do
       enable :logging
+      register Sinatra::Reloader
     end
 
     use Rack::MethodOverride
@@ -62,9 +64,8 @@ module MiddleManager
       if param.first && param.first.match(/^region_(.+)/)
         key = $1
         value = param.last
-
         # puts "Editing #{name} to be #{value}"
-        manager.regions.set(key, manager.regions.get(key).merge({ value: value }))
+        manager.regions.set(key, manager.regions.get(key).merge({ value: value}))
       end
     end
     redirect to('/'), 303

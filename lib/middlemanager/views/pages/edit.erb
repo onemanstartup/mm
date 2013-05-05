@@ -18,22 +18,22 @@
                   <input class="span5" type="text" value="<%= page.ru_title %>" name="page[ru_title]">
                   <% if page.category == "work"%>
                     <% if page.images %>
-                    <% page.images.each do |c| %>
-                        <% c.each_with_index do |image, index| %>
+                      <% page.images.each do |c| %>
+                        <% Hash[*c.flatten].each do |index, image| %>
 
-                      <fieldset>
-                        <legend> <%= image["image_name"]  %> </legend>
-                  <label>bg</label>
-                  <input class="span5" type="text" value="<%= image["bg"] %>" name="page[images][<%= index %>][bg]">
-                  <label>image_name</label>
-                  <input class="span5" type="text" value="<%= image["image_name"]  %>" name="page[images][<%= index %>][image_name]">
-                  <label>axis</label>
-                  <input class="span5" type="text" value="<%= image["axis"]  %>" name="page[images][<%= index %>][axis]">
-                  <label>letter_box_type</label>
-                  <input class="span5" type="text" value="<%= image["letter_box_type"]  %>" name="page[images][<%= index %>][letter_box_type]">
-                  </fieldset>
-                  <% end %>
-<% end %>
+                                    <fieldset>
+                                      <legend> <%= image["image_name"]  %> </legend>
+                                <label>bg</label>
+                                <input class="span5" type="text" value="<%= image["bg"] %>" name="page[images][<%= index %>][bg]">
+                                <label>image_name</label>
+                                <input class="span5" type="text" value="<%= image["image_name"]  %>" name="page[images][<%= index %>][image_name]">
+                                <label>axis</label>
+                                <input class="span5" type="text" value="<%= image["axis"]  %>" name="page[images][<%= index %>][axis]">
+                                <label>letter_box_type</label>
+                                <input class="span5" type="text" value="<%= image["letter_box_type"]  %>" name="page[images][<%= index %>][letter_box_type]">
+                                </fieldset>
+                                <% end %>
+              <% end %>
 <%else%>
 
   <p>Add new image</p>

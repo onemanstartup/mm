@@ -78,7 +78,10 @@ module MiddleManager
         @store["%s@%s" % [path, name]] ||= content
       end
       obj = Thor::CoreExt::HashWithIndifferentAccess.new(obj)
-      obj.value
+      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+      html_value = markdown.render(obj.value)
+      #obj.value
+      html_value
     end
   end
 

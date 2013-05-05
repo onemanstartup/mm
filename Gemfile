@@ -16,4 +16,5 @@ gem "therubyracer"
 gem 'json'
 gem "passenger"
 gem 'rb-fsevent', '~> 0.9'
+gem 'redcarpet'
 gem "autoprefixer-rails"
