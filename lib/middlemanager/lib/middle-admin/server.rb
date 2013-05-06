@@ -4,6 +4,8 @@ require 'yaml/store'
 require 'sinatra'
 require 'sinatra/contrib/all'
 require 'thor'
+require 'git'
+
 module MiddleManager
   class Server < Sinatra::Base
     register Sinatra::Contrib
@@ -109,8 +111,8 @@ module MiddleManager
   end
 
   get '/commit' do
-    g = Git.open(File.join(File.dirname(__FILE__), '..', '..', '..', '..'), :log => Logger.new(STDOUT))
-    g.add(:all=>true) 
+    g = ::Git.open(File.join(File.dirname(__FILE__), '..', '..', '..', '..'), :log => Logger.new(STDOUT))
+    g.commit_all('changes from admin') 
     redirect to('/'), 303
   end
 

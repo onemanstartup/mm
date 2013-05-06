@@ -51,6 +51,7 @@ PATH
   remote: lib/middlemanager
   specs:
     middlemanager (0.1.0)
+      git
       sinatra
       sinatra-contrib
       thor
@@ -91,6 +92,7 @@ GEM
     fastthread (1.0.7)
     ffi (1.8.1)
     fssm (0.2.10)
+    git (1.2.5)
     haml (4.0.2)
       tilt
     highline (1.6.18)
