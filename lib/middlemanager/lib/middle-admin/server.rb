@@ -113,6 +113,7 @@ module MiddleManager
   get '/commit' do
     g = ::Git.open(File.join(File.dirname(__FILE__), '..', '..', '..', '..'), :log => Logger.new(STDOUT))
     g.commit_all('changes from admin') 
+    g.push
     redirect to('/'), 303
   end
 
