@@ -3,12 +3,9 @@ html
   height 100%
 
 body
-  image-rendering -webkit-optimize-contrast
-  image-rendering -moz-crisp-edges
-  -webkit-font-smoothing antialiased
-  text-rendering optimizeLegibility
-  text-align center
-  font-family sans-serif
+  font-family Hapna
+  font-weight normal
+  font-style normal
   position relative
   background #fffcde
   &.about
@@ -43,6 +40,10 @@ body
 *
   box-sizing border-box
 
+#page_switch
+  float right
+  margin -2px 50px 0px 0px
+
 #top_nav
   background #1a1a1a
   padding 10px 0px
@@ -52,12 +53,11 @@ body
   z-index 2
   a
     color #fffcde
-    text-transform uppercase
     text-decoration none
     font-size 18px
-    font-family "Futura New"
-    font-weight 600
-
+    font-family Hapna
+    font-weight bold 
+    font-style normal
 #wall
   ._tile
     font-size 36px
@@ -97,7 +97,6 @@ nav[role="navigation"]
         strong
           display block
           padding 0
-          font-family "Futura New", "Whitney SSm A", "Whitney SSM B", Helvetica, Arial, sans-serif
           font-weight bold
           color rgba(22, 22, 22, 1)
           transition color 0.2s ease-in-out
@@ -149,7 +148,6 @@ body.about  nav[role="navigation"] ul li a:hover em,
   text-shadow 0 1px 0 rgba(24,10,48,.75)
   font-size 31px
   text-transform uppercase
-  font-family "Futura New"
   height 50px
   width 200px
   line-height 50px
@@ -179,7 +177,6 @@ nav
     letter-spacing 2px
 
 #content
-  font-family "Futura New"
   padding 0px 8%
 
 .inner_content
@@ -216,8 +213,15 @@ a
 .header
   overflow hidden
   padding-bottom 100px
+  background unquote("url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI2MiUiIHN0b3AtY29sb3I9IiNmZmZjZGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI3MCUiIHN0b3AtY29sb3I9IiNmZmZjZGUiIHN0b3Atb3BhY2l0eT0iMC43OSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==)")
+  background -moz-linear-gradient(top, rgba(255,252,222,1) 62%, rgba(255,252,222,0.79) 70%, rgba(255,255,255,0) 100%)
+  background -webkit-gradient(linear, left top, left bottom, color-stop(62%,rgba(255,252,222,1)), color-stop(70%,rgba(255,252,222,0.79)), color-stop(100%,rgba(255,255,255,0)))
+  background -webkit-linear-gradient(top, rgba(255,252,222,1) 62%,rgba(255,252,222,0.79) 70%,rgba(255,255,255,0) 100%)
+  background -o-linear-gradient(top, rgba(255,252,222,1) 62%,rgba(255,252,222,0.79) 70%,rgba(255,255,255,0) 100%)
+  background -ms-linear-gradient(top, rgba(255,252,222,1) 62%,rgba(255,252,222,0.79) 70%,rgba(255,255,255,0) 100%)
   background linear-gradient(to bottom, rgba(255,252,222,1) 62%,rgba(255,252,222,0.79) 70%,rgba(255,255,255,0) 100%)
   filter unquote("progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffcde', endColorstr='#00ffffff',GradientType=0 )")
+
   position fixed
   left 0
   right 0
@@ -229,8 +233,15 @@ a
   display none
   opacity 0
   .header
-    background linear-gradient(to bottom,  rgba(25,25,25,1) 0%,rgba(27,27,27,1) 19%,rgba(33,33,33,1) 64%,rgba(34,34,34,0.93) 70%,rgba(35,35,35,0.77) 76%,rgba(36,36,36,0.29) 86%,rgba(37,37,37,0) 100%)
+    background unquote("url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE5MTkxOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjY0JSIgc3RvcC1jb2xvcj0iIzIxMjEyMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijc2JSIgc3RvcC1jb2xvcj0iIzIyMjIyMiIgc3RvcC1vcGFjaXR5PSIwLjc3Ii8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg2JSIgc3RvcC1jb2xvcj0iIzIzMjMyMyIgc3RvcC1vcGFjaXR5PSIwLjI5Ii8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNTI1MjUiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+)")
+    background -moz-linear-gradient(top,  rgba(25,25,25,1) 0%, rgba(33,33,33,1) 64%, rgba(34,34,34,0.77) 76%, rgba(35,35,35,0.29) 86%, rgba(37,37,37,0) 100%)
+    background -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(25,25,25,1)), color-stop(64%,rgba(33,33,33,1)), color-stop(76%,rgba(34,34,34,0.77)), color-stop(86%,rgba(35,35,35,0.29)), color-stop(100%,rgba(37,37,37,0)))
+    background -webkit-linear-gradient(top,  rgba(25,25,25,1) 0%,rgba(33,33,33,1) 64%,rgba(34,34,34,0.77) 76%,rgba(35,35,35,0.29) 86%,rgba(37,37,37,0) 100%)
+    background -o-linear-gradient(top,  rgba(25,25,25,1) 0%,rgba(33,33,33,1) 64%,rgba(34,34,34,0.77) 76%,rgba(35,35,35,0.29) 86%,rgba(37,37,37,0) 100%)
+    background -ms-linear-gradient(top,  rgba(25,25,25,1) 0%,rgba(33,33,33,1) 64%,rgba(34,34,34,0.77) 76%,rgba(35,35,35,0.29) 86%,rgba(37,37,37,0) 100%)
+    background linear-gradient(to bottom,  rgba(25,25,25,1) 0%,rgba(33,33,33,1) 64%,rgba(34,34,34,0.77) 76%,rgba(35,35,35,0.29) 86%,rgba(37,37,37,0) 100%)
     filter unquote("progid:DXImageTransform.Microsoft.gradient( startColorstr='#191919', endColorstr='#00252525',GradientType=0 )")
+
 
 #bgg
   background #fffcde
@@ -271,18 +282,18 @@ a
 
 span
   &.number
-    font-family "PF Agora Slab Pro"
+    font-family  Hapna
     text-transform uppercase
     color #515151
-    font-size 18px
-    font-weight 400
-    letter-spacing 2px
+    font-size 22px
+    font-weight normal
+    letter-spacing 4px
     line-height 50px
 
 h2
   font-size 38px
   margin-bottom 30px
-
+  font-family HapnaSlabSerif-ExtraBold
 body.about h2,
 body.ru_about h2
   color #e5e5e5
@@ -359,7 +370,6 @@ body.ru_about .post a
 
 #footer
   padding 50px 0px
-  font-family "Futura New"
   font-size 15px
   color #fff
   background rgba(231,32,32, 1)
@@ -518,40 +528,22 @@ html
 #bottomsection
   .icon
     color #000
-    font-size 0px
     text-decoration none
-    line-height 70px
-    font-size 25px
-    line-height 50px
-    &.disabled
-      b
-        background #666
-    b
-      top 6px
-      width 15px
-      height 12px
-      background #000
-      display inline-block
-      position relative
-    span
-      width 0
-      height 0
-      border-top 15px solid transparent
-      border-bottom 15px solid transparent
+    font-size 70px
+    line-height 66px
   #prev-image
-    float left
+    float right
     padding 0px 30px
-    border-right 1px dotted #211b1f
   #next-image
     float right
     padding 0px 30px
-    border-left 1px dotted #211b1f
-
-#bottomsection .icon.disabled,
-#bottomsection .icon.disabled span
-  border-left-color #666
-  border-right-color #666
+  span.number
+    line-height 73px
+    float left
+    padding-left 30px
+#bottomsection .icon.disabled
   cursor not-allowed
+  color #777
 
 #prev-image
   span
@@ -581,4 +573,14 @@ html
 .loading
   width 100%
   height 100%
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px)
+  .post
+    padding 20px 80px
+  .inner_content
+    width auto
+    .cari a
+      height 240px
+      img
+        margin-top -210px
 

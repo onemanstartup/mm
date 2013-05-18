@@ -119,7 +119,7 @@ end
     @title = work.title
     @images = work.images
   end
-  page "ru/gallery/pixelart_#{index}.html", :proxy => "/localizable/index.html", :ignore => true do
+  page "ru/gallery/pixelart_#{index+1}.html", :proxy => "/localizable/index.html", :ignore => true do
     @title = work.ru_title
     @images = work.images
   end

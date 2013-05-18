@@ -20,6 +20,7 @@ index.html@body_eng: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
     us if you want to work with us, but don't have experience\r\n\r\n##### Our friends\r\n\r\nHere
     friends whose works we are appreciate, check them out!\r\n\r\n*   [onemanstartup](#)\r\n*
     \  [Weasly Grizzly](#)\r\n*   [Balamoot](#)"
+  html: ! ' '
   title: Welcome to Megapont
   options: {}
 index.html@body_ru: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess

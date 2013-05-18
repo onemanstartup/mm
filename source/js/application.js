@@ -1,6 +1,7 @@
 //= require_self
 //= require "jquery-1.9.1.min"
 //= require "jquery-ui"
+//= require "MyFontsWebfontsKit"
 //= require "hammer"
 //= require "jquery.infinitedrag"
 //= require "loader"

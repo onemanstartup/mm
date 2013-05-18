@@ -32,7 +32,7 @@ work@work2: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
     '0':
       bg: '000000'
       image_name: 39_pixel_art.png
-      axis: y
+      axis: xy
       letter_box_type: single
 work@work3: !ruby/hash:Thor::CoreExt::HashWithIndifferentAccess
   category: work

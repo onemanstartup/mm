@@ -147,15 +147,14 @@ jQuery ->
       $("#page_switch").text("о нас").attr "href", "/ru/about.html"
     else
       $("#page_switch").text("about us").attr "href", "about.html"
-    console.log $("#works .inner_content").html().trim() == ""
 
-    if $("#works .inner_content").html().trim() is ""
+    if $("#works #works_content").html().trim() is ""
       cardTemplate = $("#cardTemplate").html()
       $(works).each (index) ->
         w = @data
         template = cardTemplate.format(works.length - index, w.title,
           w.preview.image_name, w.preview.width, w.preview.height)
-        $("#works .inner_content").append template
+        $("#works #works_content").append template
 
     $("img.lazy").show().lazyload
       effect: "fadeIn"
@@ -168,7 +167,6 @@ jQuery ->
 
   # loading page first route
   enableonpopstate = ->
-    console.log('pop')
     window.onpopstate = (event) ->
       router.navigate window.location.pathname
   router = new Router()
@@ -185,11 +183,11 @@ jQuery ->
     else
       $("#page_switch").text("back to works").attr "href", "/"
   router.route "*lang/gallery/pixelart_:id.html", (lang, id) ->
-    if id is 1
+    if +id is 1
       $("#prev-image").addClass "disabled"
     else
       $("#prev-image.disabled").removeClass "disabled"
-    if id is works.length
+    if +id is works.length
       $("#next-image").addClass "disabled"
     else
       $("#next-image.disabled").removeClass "disabled"

@@ -25,7 +25,11 @@ var works = [
       <div class="header">
         <%= partial "/partials/navigation" %>
       </div>
-      <div class="inner_content"></div>
+      <div class="inner_content" id="works_content"></div>
+      <div style="text-align:center">
+        <h2>The End</h2>
+      </div>
+      
     </div>
 
     <div class="post" id="about_us">
@@ -34,10 +38,10 @@ var works = [
       </div>
 
       <div class="ru inner_content">\n
-        <%= mgmt "body_ru" %> 
+        <%= mgmt "body_ru", {:path => "index.html"} %> 
       </div>
       <div class="eng inner_content">
-        <%= mgmt "body_eng" %>
+        <%= mgmt "body_eng", {:path => "index.html"} %>
       </div>
 
     </div>
@@ -58,11 +62,11 @@ var works = [
     <a href="#" id="small_logo"></a>
 
     <div id="bottomsection">
-      <a href="#"  id="prev-image" class="icon"><span></span><b></b></a>
       <span class="number">
         – No. 001 –
       </span>
-      <a href="#" id="next-image" class="icon"><b></b><span></span></a>
+      <a href="#" id="next-image" class="icon icon-angle-right"></a>
+      <a href="#" id="prev-image" class="icon icon-angle-left"></a>
     </div>
   </div>
 </div>
